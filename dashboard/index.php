@@ -103,16 +103,16 @@ if(isset($_SESSION["huoma.dashboard"])){
   <!-- 左右布局 -->
   <!-- 电脑端横排列表 -->
   <div class="left-nav">
-    <button type="button" class="btn btn-dark">数据看板</button>
-    <a href="./qun.php?t=home/qun&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">微信群活码</button></a>
-    <a href="./wx.php?t=home/wx&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">客服活码</button></a>
-    <a href="./active.php?t=home/active&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">活动码</button></a>
-    <a href="./user.php?t=home/user&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">用户管理</button></a>
-    <a href="./order.php?t=home/order&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">订单管理</button></a>
-    <a href="./taocan.php?t=home/taocan&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">续费套餐</button></a>
-    <a href="./yqm.php?t=home/yqm&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">邀请码</button></a>
-    <a href="./addons.php?t=home/addons&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">插件中心</button></a>
-    <a href="./set.php?t=home/set&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-light">系统设置</button></a>
+    <a href="index.php" class="btn btn-dark">数据看板</a>
+    <a href="./qun.php?t=home/qun&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">微信群活码</a>
+    <a href="./wx.php?t=home/wx&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">客服活码</a>
+    <a href="./active.php?t=home/active&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">活动码</a>
+    <a href="./user.php?t=home/user&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">用户管理</a>
+    <a href="./order.php?t=home/order&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">订单管理</a>
+    <a href="./taocan.php?t=home/taocan&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">续费套餐</a>
+    <a href="./yqm.php?t=home/yqm&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">邀请码</a>
+    <a href="./addons.php?t=home/addons&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">插件中心</a>
+    <a href="./set.php?t=home/set&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">系统设置</a>
   </div>';
 
   echo '<!-- 右侧布局 -->
