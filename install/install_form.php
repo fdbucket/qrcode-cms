@@ -137,7 +137,7 @@ function install(){
       success: function (data) {
         // 安装成功
         if (data.code==100) {
-          $(".container .jumbotron").html("<h3>活码管理系统安装成功！</h3><p><a href='../console/' target='blank'>用户后台>&nbsp;&nbsp;&nbsp;</a> <a href='../dashboard/' target='blank'>管理后台> </a></p>");
+          $(".container .jumbotron").html("<h3>活码管理系统安装成功！</h3><p><a href='../user/' target='blank'>用户后台>&nbsp;&nbsp;&nbsp;</a> <a href='../dashboard/' target='blank'>管理后台> </a></p>");
 
         }else{
           $("#alert").css("display","block");

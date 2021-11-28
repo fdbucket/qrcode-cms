@@ -105,7 +105,7 @@ function logincheck(){
           if (data.code == 100) {
             $(".container .Result").css("display","block");
             $(".container .Result").html('<div class="alert alert-success"><strong>'+data.msg+'</strong></div>');
-            location.href="../../console/";
+            location.href="../../user/";
           }else if(data.code == 103){
             $(".container .Result").css("display","block");
             $(".container .Result").html('<div class="alert alert-danger"><strong>该账号已到期，<a href="javascript:;" data-toggle="modal" data-target="#xufei_modal">点击这里续费</a></strong><a href="javascript:alert(\'请自行到本页面代码处配置购买链接\')" style="float:right;">购买邀请码</a></div>');

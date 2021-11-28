@@ -72,7 +72,7 @@ function sharequn(event){
       success: function (data) {
         // 分享成功
         $("#share_qun .modal-body .link").text("链接："+data.rkurl+"");
-        $("#share_qun .modal-body .qrcode").html("<img src='../../../console/qrcode.php?content="+data.rkurl+"' width='200'/>");
+        $("#share_qun .modal-body .qrcode").html("<img src='../../../user/qrcode.php?content="+data.rkurl+"' width='200'/>");
       },
       error : function() {
         // 分享失败
@@ -181,7 +181,7 @@ var qunqrcode_lunxun = setInterval("upload_qunqrcode()",2000);
     clearInterval(qunqrcode_lunxun);
     var creatffq = new FormData(document.getElementById("creatffq"));
     $.ajax({
-      url:"../../../console/upload.php",
+      url:"../../../user/upload.php",
       type:"post",
       data:creatffq,
       cache: false,
@@ -221,7 +221,7 @@ var edi_qunqrcode_lunxun = setInterval("edi_upload_qunqrcode()",2000);
     clearInterval(edi_qunqrcode_lunxun);
     var ediffjq = new FormData(document.getElementById("ediffjq"));
     $.ajax({
-      url:"../../../console/upload.php",
+      url:"../../../user/upload.php",
       type:"post",
       data:ediffjq,
       cache: false,

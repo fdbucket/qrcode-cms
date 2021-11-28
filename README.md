@@ -18,7 +18,7 @@ https://support.qq.com/products/345003
 # 使用
 安装后会有用户端和管理端入口<br/>
 
-用户端管理后台路径：/console<br/>
+用户端管理后台路径：/user<br/>
 管理端管理后台路径：/dashboard<br/>
 
 # 版本和功能

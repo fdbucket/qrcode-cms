@@ -25,7 +25,7 @@ header("Content-type:text/html;charset=utf-8");
 $phpv = PHP_VERSION; // php版本检测
 file_put_contents("../db_config/test.txt","test db_config 777"); // 检测创建文件权限
 file_put_contents("../addons/test.txt","test addons 777");
-file_put_contents("../console/upload/test.txt","test console 777");
+file_put_contents("../user/upload/test.txt","test console 777");
 ?>
 
 <!-- 主体 -->
@@ -82,7 +82,7 @@ file_put_contents("../console/upload/test.txt","test console 777");
             <td>上传权限</td>
             <td>upload目录777权限</td>
             <?php
-              if (file_exists("../console/upload/test.txt")) {
+              if (file_exists("../user/upload/test.txt")) {
                 echo '<td><span class="badge badge-success">符合</span></td>';
               }else{
                 echo '<td><span class="badge badge-danger">不符合</span></td>';
@@ -93,9 +93,9 @@ file_put_contents("../console/upload/test.txt","test console 777");
     </table>
     <!-- 安装按钮 -->
     <?php
-      if ($phpv >= '5.5' && $phpv <= '7.1' && file_exists("../console/upload/test.txt") && file_exists("../db_config/test.txt") && file_exists("../addons/test.txt")) {
+      if ($phpv >= '5.5' && $phpv <= '7.1' && file_exists("../user/upload/test.txt") && file_exists("../db_config/test.txt") && file_exists("../addons/test.txt")) {
         echo '<a href="./install_form.php"><button type="button" class="btn btn-tjzdy" style="margin:20px auto 0;display: block;">开始安装</button></a>';
-        unlink('../console/upload/test.txt');
+        unlink('../user/upload/test.txt');
         unlink('../addons/test.txt');
         unlink('../db_config/test.txt');
       }

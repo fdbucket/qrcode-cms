@@ -245,7 +245,7 @@ function sharewx(event){
       success: function (data) {
         // 分享成功
         $("#share_wx .modal-body .link").text("链接："+data.url+"");
-        $("#share_wx .modal-body .qrcode").html("<img src='../console/qrcode.php?content="+data.url+"' width='200'/>");
+        $("#share_wx .modal-body .qrcode").html("<img src='../user/qrcode.php?content="+data.url+"' width='200'/>");
       },
       error : function() {
         // 分享失败

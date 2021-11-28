@@ -280,7 +280,7 @@ function sharequn(event){
       success: function (data) {
         // 分享成功
         $("#share_qun .modal-body .link").text("链接："+data.rkurl+"");
-        $("#share_qun .modal-body .qrcode").html("<img src='../../../console/qrcode.php?content="+data.rkurl+"' width='200'/>");
+        $("#share_qun .modal-body .qrcode").html("<img src='../../../user/qrcode.php?content="+data.rkurl+"' width='200'/>");
       },
       error : function() {
         // 分享失败

@@ -287,7 +287,7 @@ function xdd_alipay(){
           // 把二维码展示区域显示出来
           $("#xufei_modal .pay_content").css("display","block");
           $("#xufei_modal .paytips").text("请扫码完成支付");
-          $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../console/qrcode.php?content="+data.qr+"' />");
+          $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../user/qrcode.php?content="+data.qr+"' />");
           $("#order_no").text(data.xddpay_order); // 把订单号展示在页面上
         }else{
           $("#Result").css("display","block");
@@ -363,7 +363,7 @@ function dmf_alipay(){
           // 把二维码展示区域显示出来
           $("#xufei_modal .pay_content").css("display","block");
           $("#xufei_modal .paytips").text("请扫码完成支付");
-          $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../console/qrcode.php?content="+data.qrcode+"' />");
+          $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../user/qrcode.php?content="+data.qrcode+"' />");
           $("#order_no").text(data.order_no); // 把订单号展示在页面上
         }else{
           $("#Result").css("display","block");
