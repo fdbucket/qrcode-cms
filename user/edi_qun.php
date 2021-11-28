@@ -81,7 +81,7 @@ function Rztime($ftime) {
 
 // 判断登录状态
 session_start();
-if(isset($_SESSION["huoma.admin"])){
+if(isset($_SESSION["huoma.user"])){
 
   // 获得活码id
   $qun_hmid = trim($_GET["hmid"]);
@@ -106,7 +106,7 @@ if(isset($_SESSION["huoma.admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="admin-title"><a href="../">'.$title.'</a></span>
-  <span class="admin-login-link"><a href="../account/exit">'.$_SESSION["huoma.admin"].' 退出</a></span>
+  <span class="admin-login-link"><a href="../account/exit">'.$_SESSION["huoma.user"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->

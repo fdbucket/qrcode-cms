@@ -4,8 +4,8 @@ header("Content-type:application/json");
 
 // 开启session，验证登录状态
 session_start();
-if(isset($_SESSION["huoma.admin"])){
-	$lguser = $_SESSION["huoma.admin"];
+if(isset($_SESSION["huoma.user"])){
+	$lguser = $_SESSION["huoma.user"];
 	// 数据库配置
 	include '../db_config/db_config.php';
 
@@ -58,7 +58,7 @@ if(isset($_SESSION["huoma.admin"])){
 			"msg" => "更新成功"
 		);
 		if ($old_pwd !== $new_pwd) {
-			unset($_SESSION['huoma.admin']);
+			unset($_SESSION['huoma.user']);
 		}
 	}
 }else{

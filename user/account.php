@@ -56,12 +56,12 @@
 <?php
 // 判断登录状态
 session_start();
-if(isset($_SESSION["huoma.admin"])){
+if(isset($_SESSION["huoma.user"])){
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="admin-title">'.$title.'</span>
-  <span class="admin-login-link"><a href="../account/exit">'.$_SESSION["huoma.admin"].' 退出</a></span>
+  <span class="admin-login-link"><a href="../account/exit">'.$_SESSION["huoma.user"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -78,7 +78,7 @@ if(isset($_SESSION["huoma.admin"])){
   </div>';
 
   // 获取账号信息
-  $sql = "SELECT * FROM huoma_user WHERE user ='".$_SESSION["huoma.admin"]."'";
+  $sql = "SELECT * FROM huoma_user WHERE user ='".$_SESSION["huoma.user"]."'";
   $result = $conn->query($sql);
 
   // 获取套餐列表

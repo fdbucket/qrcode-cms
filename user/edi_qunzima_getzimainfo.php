@@ -1,7 +1,7 @@
 <?php
 header("Content-type:application/json");
 session_start();
-if(isset($_SESSION["huoma.admin"])){
+if(isset($_SESSION["huoma.user"])){
 
 	// 数据库配置
 	include '../db_config/db_config.php';
