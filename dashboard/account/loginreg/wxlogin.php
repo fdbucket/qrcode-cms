@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
-    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <style type="text/css">
     	*{
     		margin:0;
@@ -86,7 +86,7 @@ if (empty(trim($openid))) {
 
 	}else{
 		//否则，就提示要绑定账号和密码
-		echo "<title>里客云资源站-账号绑定</title>";
+		echo "<title>账号绑定 - 活码管理系统</title>";
 		echo "<h3>初次使用微信登录需绑定账号</h3>";
 		echo '<div id="bd-div">
 				<div class="formdiv">

@@ -8,7 +8,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=no">
-	<script src="../../../js/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./ffq.css">
 </head>
 <?php
@@ -41,7 +41,7 @@
 	    if ($ffjq_status == '2') {
 	    	echo '<title>提示</title>';
 			echo '<div style="width:100px;height:100px;margin:100px auto 20px;">
-			<img src="../../../images/warning.png" width="100" />
+			<img src="../../../assets/images/warning.png" width="100" />
 			</div>';
 			echo '<p style="color:#666;font-size:15px;text-align:center;font-weight:bold;">该群暂停使用</p>';
 		    exit;
@@ -50,7 +50,7 @@
 	} else {
 		echo '<title>提示</title>';
 		echo '<div style="width:100px;height:100px;margin:100px auto 20px;">
-		<img src="../../../images/error.png" width="100" />
+		<img src="../../../assets/images/error.png" width="100" />
 		</div>';
 		echo '<p style="color:#666;font-size:15px;text-align:center;font-weight:bold;">该群不存在或已被管理员删除</p>';
 	    exit;
@@ -75,7 +75,7 @@
     if(!$openId){
     	echo '<title>提示</title>';
 		echo '<div style="width:100px;height:100px;margin:100px auto 20px;">
-		<img src="../../../images/warning.png" width="100" />
+		<img src="../../../assets/images/warning.png" width="100" />
 		</div>';
 		echo '<p style="color:#666;font-size:15px;text-align:center;font-weight:bold;">请重新打开页面</p>';
 	    exit;

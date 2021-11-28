@@ -21,7 +21,7 @@ $out_trade_no = date('Ymd').time().rand(10,99);
 $name = 'huoma-'.$tc_days.'_'.$tc_price.'|'.$userid;
 $money = 0.5;
 $type = 'alipay';
-$sitename = 'likeyun';
+$sitename = '活码管理系统';
 
 // 签名算法
 $sign = md5('money='.$money.'&name='.$name.'&notify_url='.$notify_url.'&out_trade_no='.$out_trade_no.'&pid='.$pid.'&return_url='.$return_url.'&sitename='.$sitename.'&type='.$type.$key);

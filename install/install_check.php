@@ -211,7 +211,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
       if (mysqli_query($conn, $sql_creat_admin_user)) {
 
         // 创建数据库配置文件
-        $db_config_file = '<?php' . PHP_EOL . '  /**' . PHP_EOL . '   *  数据库配置' . PHP_EOL . '   *  Author：TANKING' . PHP_EOL . '   *  Date：'.date("Y-m-d").'' . PHP_EOL . '   *  Web：www.likeyuns.com' . PHP_EOL . '   **/' . PHP_EOL . '  $db_url = "'.$dburl.'";' . PHP_EOL . '  $db_user = "'.$dbuser.'";' . PHP_EOL . '  $db_pwd = "'.$dbpwd.'";' . PHP_EOL . '  $db_name = "'.$dbname.'";' . PHP_EOL . '?>';
+        $db_config_file = '<?php' . PHP_EOL . '  /**' . PHP_EOL . '   *  数据库配置' . PHP_EOL . '   **/' . PHP_EOL . '  $db_url = "'.$dburl.'";' . PHP_EOL . '  $db_user = "'.$dbuser.'";' . PHP_EOL . '  $db_pwd = "'.$dbpwd.'";' . PHP_EOL . '  $db_name = "'.$dbname.'";' . PHP_EOL . '?>';
 
         file_put_contents('../db_config/db_config.php', $db_config_file);
 

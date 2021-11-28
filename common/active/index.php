@@ -13,7 +13,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" type="text/css" href="../../css/chunk-vendors.common.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/common.css">
 </head>
 <body style="background: #fff;">
 
@@ -105,13 +105,13 @@ if (trim(empty($active_id))) {
 	    	// 设置群活码标题
 			echo '<title>提醒</title>';
 	    	echo '<br/><br/><br/>';
-	       	echo '<div id="tips_icon"><img src="../../images/warning.png" /></div>';
+	       	echo '<div id="tips_icon"><img src="../../assets/images/warning.png" /></div>';
 	       	echo '<div id="tips_text">该页面已被管理员暂停使用</div>';
 	    }else if ($active_status == '3') {
 	    	// 设置群活码标题
 			echo '<title>提醒</title>';
 	    	echo '<br/><br/><br/>';
-	       	echo '<div id="tips_icon"><img src="../../images/error.png" /></div>';
+	       	echo '<div id="tips_icon"><img src="../../assets/images/error.png" /></div>';
 	       	echo '<div id="tips_text">该页面因违规已被管理员停止访问</div>';
 	    }else if ($active_status == '4') {
 	    	// 设置群活码标题
@@ -124,7 +124,7 @@ if (trim(empty($active_id))) {
 		// 设置群活码标题
 		echo '<title>提醒</title>';
     	echo '<br/><br/><br/>';
-       	echo '<div id="tips_icon"><img src="../../images/error.png" /></div>';
+       	echo '<div id="tips_icon"><img src="../../assets/images/error.png" /></div>';
        	echo '<div id="tips_text">该页面不存在或已被管理员删除</div>';
 	}// 验证该页面是否存在结束
 	$conn->close();

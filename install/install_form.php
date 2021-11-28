@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>里客云活码管理系统安装程序 - v6.0</title>
+  <title>活码管理系统安装程序 - v6.0</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <script src="../js/jquery.min.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/chunk-vendors.huoma.css">
-  <link rel="stylesheet" type="text/css" href="../css/chunk-vendors.theme.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
   <style>
     input:-webkit-autofill, 
     textarea:-webkit-autofill, 
@@ -24,7 +24,7 @@
 <body>
 <!-- 顶部 -->
 <div id="topbar">
-  <span class="admin-title">里客云活码管理系统安装程序</span>
+  <span class="admin-title">活码管理系统安装程序</span>
 </div>
 
 <!-- 主体 -->
@@ -32,7 +32,7 @@
   <br/>
   <br/>
   <div class="jumbotron" style="background: #f2f2f2;">
-    <h2>里客云活码管理系统安装程序</h2>
+    <h2>活码管理系统安装程序</h2>
     <p>这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。<br/><br/><strong>遇到安装问题，可以加入交流群研讨：<a href="javascript:;" data-toggle="modal" data-target="#myModal">点击加群</a></strong></p>
 
     <!-- 表单 -->
@@ -137,7 +137,7 @@ function install(){
       success: function (data) {
         // 安装成功
         if (data.code==100) {
-          $(".container .jumbotron").html("<h3>liKeYun活码系统安装成功！</h3><p><a href='../console/' target='blank'>用户后台>&nbsp;&nbsp;&nbsp;</a> <a href='../dashboard/' target='blank'>管理后台> </a></p>");
+          $(".container .jumbotron").html("<h3>活码管理系统安装成功！</h3><p><a href='../console/' target='blank'>用户后台>&nbsp;&nbsp;&nbsp;</a> <a href='../dashboard/' target='blank'>管理后台> </a></p>");
 
         }else{
           $("#alert").css("display","block");

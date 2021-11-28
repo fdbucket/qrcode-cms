@@ -13,7 +13,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" type="text/css" href="../../css/chunk-vendors.common.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/common.css">
 </head>
 <body>
 
@@ -69,21 +69,21 @@ if (trim(empty($wx_id))) {
 		if ($user_status !== '1') {
 			echo '<title>提醒</title>
 	    		  <br/><br/><br/>
-	       		  <div id="tips_icon"><img src="../../images/warning.png" /></div>
+	       		  <div id="tips_icon"><img src="../../assets/images/warning.png" /></div>
 	              <div id="tips_text">管理员账号异常</div>';
 			exit;
 		}
 		if(strtotime(date("Y-m-d"))>=strtotime($expire_time)){
 			echo '<title>提醒</title>
 	    		  <br/><br/><br/>
-	       		  <div id="tips_icon"><img src="../../images/warning.png" /></div>
+	       		  <div id="tips_icon"><img src="../../assets/images/warning.png" /></div>
 	              <div id="tips_text">管理员账号已到期</div>';
 			exit;
 		}
 	}else{
 		echo '<title>提醒</title>
     		  <br/><br/><br/>
-       		  <div id="tips_icon"><img src="../../images/warning.png" /></div>
+       		  <div id="tips_icon"><img src="../../assets/images/warning.png" /></div>
               <div id="tips_text">管理员账号不存在</div>';
 		exit;
 	}
@@ -132,7 +132,7 @@ if (trim(empty($wx_id))) {
 
 						echo '<div id="safety-tips">
 						<div class="safety-icon">
-						<img src="../../images/safety-icon.png" />
+						<img src="../../assets/images/safety-icon.png" />
 						</div>
 						<div class="safety-title">此二维码已通过安全认证，可以放心扫码</div>
 						</div>';
@@ -184,7 +184,7 @@ if (trim(empty($wx_id))) {
 					// 设置活码标题
 					echo '<title>提醒</title>';
 		       		echo '<br/><br/><br/>
-		       			  <div id="tips_icon"><img src="../../images/warning.png" /></div>
+		       			  <div id="tips_icon"><img src="../../assets/images/warning.png" /></div>
 		       			  <div id="tips_text">暂无微信可以添加</div>';
 				}
 	    	}else if($wx_moshi == '2'){
@@ -203,7 +203,7 @@ if (trim(empty($wx_id))) {
 
 					echo '<div id="safety-tips">
 					<div class="safety-icon">
-					<img src="../../images/safety-icon.png" />
+					<img src="../../assets/images/safety-icon.png" />
 					</div>
 					<div class="safety-title">此二维码已通过安全认证，可以放心扫码</div>
 					</div>';
@@ -243,7 +243,7 @@ if (trim(empty($wx_id))) {
 					// 设置活码标题
 					echo '<title>提醒</title>';
 		       		echo '<br/><br/><br/>
-		       			  <div id="tips_icon"><img src="../../images/warning.png" /></div>
+		       			  <div id="tips_icon"><img src="../../assets/images/warning.png" /></div>
 		       			  <div id="tips_text">暂无微信可以添加</div>';
 				}
 	    	}
@@ -253,20 +253,20 @@ if (trim(empty($wx_id))) {
 	    	// 设置群活码标题
 			echo '<title>提醒</title>';
 	    	echo '<br/><br/><br/>';
-	       	echo '<div id="tips_icon"><img src="../../images/warning.png" /></div>';
+	       	echo '<div id="tips_icon"><img src="../../assets/images/warning.png" /></div>';
 	       	echo '<div id="tips_text">该二维码已被管理员暂停使用</div>';
 	    }else if ($wx_status == '3') {
 	    	// 设置群活码标题
 			echo '<title>提醒</title>';
 	    	echo '<br/><br/><br/>';
-	       	echo '<div id="tips_icon"><img src="../../images/error.png" /></div>';
+	       	echo '<div id="tips_icon"><img src="../../assets/images/error.png" /></div>';
 	       	echo '<div id="tips_text">该二维码因违规已被管理员停止使用</div>';
 	    }
 	} else {
 		// 设置群活码标题
 		echo '<title>提醒</title>';
     	echo '<br/><br/><br/>';
-       	echo '<div id="tips_icon"><img src="../../images/error.png" /></div>';
+       	echo '<div id="tips_icon"><img src="../../assets/images/error.png" /></div>';
        	echo '<div id="tips_text">该二维码不存在或已被管理员删除</div>';
 	}// 验证该页面是否存在结束
 	$conn->close();

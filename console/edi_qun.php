@@ -19,16 +19,16 @@
       $favicon = $row_set['favicon'];
     }
     if ($title == null || empty($title) || $title == '') {
-        $title = "引流宝 - 里客云开源活码系统";
+        $title = "活码管理系统";
         $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
         $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
-        $favicon = "../images/favicon.png";
+        $favicon = "../assets/images/favicon.png";
     }
   }else{
-    $title = "引流宝 - 里客云开源活码系统";
+    $title = "活码管理系统";
     $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
     $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
-    $favicon = "../images/favicon.png";
+    $favicon = "../assets/images/favicon.png";
   }
 
 ?>
@@ -39,12 +39,12 @@
   <title>编辑群活码 - <?php echo $title; ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <script src="../js/jquery.min.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/chunk-vendors.huoma.css">
-  <link rel="stylesheet" type="text/css" href="../css/chunk-vendors.theme.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
   <meta name="keywords" content="<?php echo $keywords; ?>">
   <meta name="description" content="<?php echo $description; ?>">
   <link rel="icon" href="<?php echo $favicon; ?>" type="image/x-icon" />

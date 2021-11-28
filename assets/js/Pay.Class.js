@@ -75,7 +75,7 @@ function payjs_wxpay(){
       beforeSend : function(data){
         // 把二维码展示区域显示出来
         $("#xufei_modal .pay_content").css("display","block");
-        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
+        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../assets/images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
       }
     });
   }
@@ -101,7 +101,7 @@ function payjs_wxpay(){
           dataType:"json",
           success: function(data){
             if (data.code == 200) {
-              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../images/wxpay_success.png\" />");
+              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../assets/images/wxpay_success.png\" />");
               $("#xufei_modal .paytips").text("支付成功");
               console.log("支付完成");
               // 停止轮询
@@ -150,7 +150,7 @@ function xdd_wxpay(){
       beforeSend : function(data){
         // 把二维码展示区域显示出来
         $("#xufei_modal .pay_content").css("display","block");
-        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
+        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../assets/images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
       }
     });
   }
@@ -176,7 +176,7 @@ function xdd_wxpay(){
           dataType:"json",
           success: function(data){
             if (data.code == 200) {
-              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../images/wxpay_success.png\" />");
+              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../assets/images/wxpay_success.png\" />");
               $("#xufei_modal .paytips").text("支付成功");
               console.log("支付完成");
               // 停止轮询
@@ -226,7 +226,7 @@ function payjs_alipay(){
       beforeSend : function(data){
         // 把二维码展示区域显示出来
         $("#xufei_modal .pay_content").css("display","block");
-        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
+        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../assets/images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
       }
     });
   }
@@ -252,7 +252,7 @@ function payjs_alipay(){
           dataType:"json",
           success: function(data){
             if (data.code == 200) {
-              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../images/alipay_success.png\" />");
+              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../assets/images/alipay_success.png\" />");
               $("#xufei_modal .paytips").text("支付成功");
               console.log("支付完成");
               // 停止轮询
@@ -302,7 +302,7 @@ function xdd_alipay(){
       beforeSend : function(data){
         // 把二维码展示区域显示出来
         $("#xufei_modal .pay_content").css("display","block");
-        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
+        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../assets/images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
       }
     });
   }
@@ -328,7 +328,7 @@ function xdd_alipay(){
           dataType:"json",
           success: function(data){
             if (data.code == 200) {
-              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../images/alipay_success.png\" />");
+              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../assets/images/alipay_success.png\" />");
               $("#xufei_modal .paytips").text("支付成功");
               console.log("支付完成");
               // 停止轮询
@@ -378,7 +378,7 @@ function dmf_alipay(){
       beforeSend : function(data){
         // 把二维码展示区域显示出来
         $("#xufei_modal .pay_content").css("display","block");
-        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
+        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../assets/images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
       }
     });
   }
@@ -404,7 +404,7 @@ function dmf_alipay(){
           dataType:"json",
           success: function(data){
             if (data.code == 200) {
-              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../images/alipay_success.png\" />");
+              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../assets/images/alipay_success.png\" />");
               $("#xufei_modal .paytips").text("支付成功");
               console.log("支付完成");
               // 停止轮询
@@ -453,7 +453,7 @@ function easy_wxpay(){
       beforeSend : function(data){
         // 把二维码展示区域显示出来
         $("#xufei_modal .pay_content").css("display","block");
-        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
+        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../assets/images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
       }
     });
   }
@@ -479,7 +479,7 @@ function easy_wxpay(){
           dataType:"json",
           success: function(data){
             if (data.code == 200) {
-              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../images/wxpay_success.png\" />");
+              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../assets/images/wxpay_success.png\" />");
               $("#xufei_modal .paytips").text("支付成功");
               console.log("支付完成");
               // 停止轮询
@@ -529,7 +529,7 @@ function easy_alipay(){
       beforeSend : function(data){
         // 把二维码展示区域显示出来
         $("#xufei_modal .pay_content").css("display","block");
-        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
+        $("#xufei_modal .pay_content .pay_qrcode").html("<img src='../assets/images/loading.gif' style='width:50px;height:50px;margin:80px auto;display:block;'/>");
       }
     });
   }
@@ -555,7 +555,7 @@ function easy_alipay(){
           dataType:"json",
           success: function(data){
             if (data.code == 200) {
-              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../images/alipay_success.png\" />");
+              $("#xufei_modal .pay_content .pay_qrcode").html("<img src=\"../assets/images/alipay_success.png\" />");
               $("#xufei_modal .paytips").text("支付成功");
               console.log("支付完成");
               // 停止轮询

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>里客云开源活码系统用户管理后台</title>
+  <title>用户管理后台 - 活码管理系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/chunk-vendors.huoma.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
 </head>
 <body>
 
@@ -30,7 +30,7 @@ if(isset($_SESSION["huoma.dashboard"])){
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
-  <span class="admin-title"><a href="./">里客云开源活码系统</a></span>
+  <span class="admin-title"><a href="./">活码管理系统</a></span>
   <span class="admin-login-link"><a href="./account/exit">'.$_SESSION["huoma.dashboard"].' 退出</a></span>
 </div>
 

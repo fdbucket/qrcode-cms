@@ -19,30 +19,30 @@
       $favicon = $row_set['favicon'];
     }
     if ($title == null || empty($title) || $title == '') {
-        $title = "引流宝 - 里客云开源活码系统";
+        $title = "活码管理系统";
         $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
         $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
-        $favicon = "../images/favicon.png";
+        $favicon = "../assets/images/favicon.png";
     }
   }else{
-    $title = "引流宝 - 里客云开源活码系统";
+    $title = "活码管理系统";
     $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
     $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
-    $favicon = "../images/favicon.png";
+    $favicon = "../assets/images/favicon.png";
   }
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>引流宝 - 里客云开源活码系统</title>
+  <title>活码管理系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/chunk-vendors.huoma.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
   <meta name="keywords" content="<?php echo $keywords; ?>">
   <meta name="description" content="<?php echo $description; ?>">
   <link rel="icon" href="<?php echo $favicon; ?>" type="image/x-icon" />
@@ -71,7 +71,7 @@ if(isset($_SESSION["huoma.dashboard"])){
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
-  <span class="admin-title"><a href="./">里客云开源活码系统</a></span>
+  <span class="admin-title"><a href="./">活码管理系统</a></span>
   <span class="admin-login-link"><a href="./account/exit">'.$_SESSION["huoma.dashboard"].' 退出</a></span>
 </div>
 
@@ -113,7 +113,7 @@ if(isset($_SESSION["huoma.dashboard"])){
   echo '<!-- 右侧布局 -->
   <div class="right-nav">
     <div class="jumbotron" style="padding:30px 20px 10px 20px;">
-      <h2><b>liKeYun活码系统插件中心</b></h2> 
+      <h2><b>活码管理系统插件中心</b></h2> 
       <p>插件中心，可以便于开发者自行开发插件或安装开源作者提供的免费和付费插件，根据个人需求安装插件。</p> 
       <h5><b>如何安装插件？</b></h5>
       <p>只需要将插件程序包复制到活码系统根目录下的addons目录即可，一般无需安装和配置，复制到目录即可生效使用。</p>

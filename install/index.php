@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>引流宝 - 里客云开源活码系统安装程序</title>
+  <title>安装程序 - 活码管理系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/chunk-vendors.huoma.css">
-  <link rel="stylesheet" type="text/css" href="../css/chunk-vendors.theme.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
   <meta name="keywords" content="<?php echo $keywords; ?>">
   <meta name="description" content="<?php echo $description; ?>">
   <link rel="icon" href="<?php echo $favicon; ?>" type="image/x-icon" />
@@ -17,7 +17,7 @@
 <body>
 <!-- 顶部 -->
 <div id="topbar">
-  <span class="admin-title">引流宝 - 里客云开源活码系统v6.0.2安装程序</span>
+  <span class="admin-title">活码管理系统v6.0.2安装程序</span>
 </div>
 
 <?php
@@ -33,7 +33,7 @@ file_put_contents("../console/upload/test.txt","test console 777");
   <br/>
   <br/>
   <div class="jumbotron" style="padding:35px 50px;background: #f2f2f2;">
-    <h2>引流宝 · 里客云开源活码系统</h2>
+    <h2>活码管理系统</h2>
     <p>这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。</p>
     <!-- 验证安装环境 -->
     <table class="table table-bordered" style="background: #fff;">

@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+}
+
+.navbar-brand {
+    margin-left: 100px;
+}
+
+.navbar-nav .nav-item .link {
+    color: #333;
+    margin-left: 50px;
+}
+
+.navbar-nav .nav-item .link:hover {
+    color: #0063f5;
+    text-decoration: none;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #f6f5fe, #e3ebf6);
+}
+
+.navbar .btn-primary {
+    border: 1px solid #0063f5;
+    background: none;
+    color: #0063f5;
+    transition: 0.3s;
+}
+
+.navbar .cj {
+    position: absolute;
+    right: 250px;
+    outline: none;
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar .cj:hover {
+    color: #0063f5;
+}
+
+.navbar .btn-primary:hover {
+    transition: 0.3s;
+    background: #0063f5;
+    color: #fff;
+}
+
+.navbar .btn-primary a {
+    text-decoration: none;
+    color: #0063f5;
+    display: block;
+}
+
+.navbar .btn-primary a:hover {
+    color: #fff;
+}
+
+.jumbotron {
+    padding: 0;
+    width: 100%;
+    height: 470px;
+    background-image: linear-gradient(to right, #f6f5fe, #e3ebf6);
+}
+
+.jumbotron .middle {
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    /*background: #f00;*/
+}
+
+.jumbotron .middle .left {
+    width: 600px;
+    height: 400px;
+    float: left;
+    /*background: #ddd;*/
+}
+
+.jumbotron .middle .left .bigtitle {
+    width: 100%;
+    height: 120px;
+    /*background: #ccc;*/
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 140px;
+    color: #333;
+}
+
+.jumbotron .middle .left .miaoshu {
+    width: 100%;
+    height: 80px;
+    /*background: #ddd;*/
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.jumbotron .middle .left .download {
+    width: 100%;
+    height: 200px;
+    /*background: #999;*/
+}
+
+.jumbotron .middle .left .download .dlbtn {
+    width: 220px;
+    height: 60px;
+    background-image: linear-gradient(to right, #227bff, #0063f5);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.jumbotron .middle .left .download .dlbtn:hover {
+    box-shadow: 0 5px 20px rgba(0, 99, 245, 0.3);
+    transition: 0.3s;
+}
+
+.jumbotron .middle .left .download .dlbtn .dltext {
+    width: 160px;
+    height: 35px;
+    margin: 12.5px auto;
+    /*background: #fff;*/
+}
+
+.jumbotron .middle .left .download .dlbtn .dltext .text {
+    width: 125px;
+    float: left;
+    height: 35px;
+    /*background: #f00;*/
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 35px;
+}
+
+.jumbotron .middle .left .download .dlbtn .dltext .icon {
+    width: 35px;
+    float: right;
+    height: 35px;
+    /*background: green;*/
+}
+
+.jumbotron .middle .left .download .dlbtn .dltext .icon img {
+    width: 30px;
+    height: 30px;
+    margin: 2.5px 2.5px;
+}
+
+.jumbotron .middle .right {
+    width: 600px;
+    height: 400px;
+    float: right;
+    /*background: #666;*/
+}
+
+.jumbotron .middle .right img {
+    width: 600px;
+    /* height: 400px; */
+}
+
+.intlist {
+    width: 1200px;
+    height: 150px;
+    /*background: #f00;*/
+    margin: -120px auto 0;
+    display: flex;
+}
+
+.intlist .li {
+    flex: 1;
+    height: 150px;
+    background: #fff;
+    float: left;
+    list-style: none;
+    border: 1px solid #e0dfff;
+    border-radius: 5px;
+}
+
+.intlist .mr {
+    margin-right: 15px;
+}
+
+.intlist .li .left {
+    width: 80px;
+    height: 150px;
+    float: left;
+    /*background: #eee;*/
+}
+
+.intlist .li .left img {
+    width: 65px;
+    height: 65px;
+    margin: 42.5px 7.5px;
+}
+
+.intlist .li .right {
+    width: calc(100% - 80px);
+    height: 150px;
+    float: right;
+    /*background: #ccc;*/
+}
+
+.intlist .li .right .top {
+    width: 100%;
+    height: 60px;
+    /*background: blue;*/
+    line-height: 90px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.intlist .li .right .bottom {
+    width: 95%;
+    height: 90px;
+    /*background: green;*/
+    font-size: 14px;
+    color: #666;
+    line-height: 22px;
+}
+
+.pageint {
+    width: 1200px;
+    height: 400px;
+    background: #f6f5fe;
+    margin: 20px auto;
+}
+
+.pageint .left1 {
+    width: 700px;
+    height: 400px;
+    float: left;
+    /*background: #eee;*/
+}
+
+.pageint .left1 img {
+    width: 700px;
+    height: 400px;
+}
+
+.pageint .right1 {
+    width: 450px;
+    height: 400px;
+    float: right;
+    /*background: #ccc;*/
+}
+
+.pageint .right1 .title {
+    width: 450px;
+    height: 130px;
+    /*background: #eee;*/
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    line-height: 180px;
+}
+
+.pageint .right1 .desc {
+    width: 300px;
+    height: 100px;
+    /*background: #ccc;*/
+    font-size: 16px;
+    color: #999;
+}
+
+.pageint .right1 .dlbtn {
+    width: 450px;
+    height: 200px;
+    /*background: #666;*/
+}
+
+.pageint .right1 .dlbtn a {
+    /*padding: 10px 15px;*/
+    display: block;
+    background: #0063f5;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    width: 150px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.pageint .right1 .dlbtn a:hover {
+    box-shadow: 0 5px 20px rgba(0, 99, 245, 0.3);
+    transition: 0.3s;
+}
+
+.pageint .left2 {
+    width: 500px;
+    height: 400px;
+    float: left;
+    /*background: #eee;*/
+}
+
+
+.pageint .left2 .title {
+    width: 450px;
+    height: 130px;
+    /*background: #666;*/
+    text-align: right;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    line-height: 180px;
+}
+
+.pageint .left2 .desc {
+    width: 450px;
+    height: 100px;
+    text-align: right;
+    /*background: #ccc;*/
+    font-size: 16px;
+    color: #999;
+}
+
+.pageint .left2 .dlbtn {
+    width: 450px;
+    height: 170px;
+    /*background: #666;*/
+    position: relative;
+}
+
+.pageint .left2 .dlbtn a {
+    /*padding: 10px 15px;*/
+    display: block;
+    background: #0063f5;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    width: 150px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 0.3s;
+    position: absolute;
+    right: 0;
+}
+
+.pageint .left2 .dlbtn a:hover {
+    box-shadow: 0 5px 20px rgba(0, 99, 245, 0.3);
+    transition: 0.3s;
+}
+
+.pageint .right2 {
+    width: 700px;
+    height: 400px;
+    float: right;
+    /*background: #ccc;*/
+}
+
+.pageint .right2 img {
+    width: 700px;
+    height: 400px;
+}
+
+.footer {
+    width: 100%;
+    height: 200px;
+    background: #f6f5fe;
+    margin-top: 50px;
+}
+
+.footer .left {
+    width: 40%;
+    height: 200px;
+    /*background: #ccc;*/
+    float: left;
+}
+
+.footer .left .top {
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+
+.footer .left .top p {
+    text-align: right;
+    line-height: 10px;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer .left .bottom {
+    width: 100%;
+    height: 120px;
+    background: green;
+}
+
+.footer .right {
+    width: 60%;
+    height: 200px;
+    background: #ddd;
+    float: right;
+}
+
+.footer .right .zuo {
+    width: 30%;
+    height: 200px;
+    background: blue;
+    float: left;
+}
+
+.footer .right .zhong {
+    width: 20%;
+    height: 200px;
+    background: pink;
+    float: left;
+}
+
+.footer .right .you {
+    width: 50%;
+    height: 200px;
+    background: yellow;
+    float: left;
+}
