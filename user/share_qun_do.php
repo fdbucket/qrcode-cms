@@ -27,7 +27,7 @@ if(isset($_SESSION["session_user"])){
 
 				// 生成入口链接
 				$SERVER = $qun_rkym.$_SERVER["REQUEST_URI"];
-				$rkurl = dirname(dirname($SERVER))."/common/qun/redirect/?hmid=".$qun_hmid;
+				$rkurl = dirname(dirname($SERVER))."/get/qun/redirect/?hmid=".$qun_hmid;
 
 				// 反馈结果
 				$result = array(

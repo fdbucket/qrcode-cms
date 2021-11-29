@@ -26,7 +26,7 @@ if(isset($_SESSION["session_user"])){
 				$wx_yuming = $row_yuming["wx_ldym"];
 				// 生成网址
 				$SERVER = $wx_yuming.$_SERVER["REQUEST_URI"];
-				$url = dirname(dirname($SERVER))."/common/wx/?wxid=".$wx_id;
+				$url = dirname(dirname($SERVER))."/get/wx/?wxid=".$wx_id;
 				$result = array(
 					"code" => "100",
 					"msg" => "分享成功",

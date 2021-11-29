@@ -26,7 +26,7 @@ if(isset($_SESSION["session_admin"])){
 				$qun_ldym = $row_yuming["qun_ldym"];
 				// 生成网址
 				$SERVER = $qun_ldym.$_SERVER["REQUEST_URI"];
-				$url = dirname(dirname($SERVER))."/common/qun/?hmid=".$qun_hmid;
+				$url = dirname(dirname($SERVER))."/get/qun/?hmid=".$qun_hmid;
 				$result = array(
 					"result" => "100",
 					"msg" => "分享成功",

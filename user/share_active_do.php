@@ -26,7 +26,7 @@ if(isset($_SESSION["session_user"])){
 				$active_yuming = $row_yuming["active_yuming"];
 				// 生成网址
 				$SERVER = $active_yuming.$_SERVER["REQUEST_URI"];
-				$url = dirname(dirname($SERVER))."/common/active/?activeid=".$active_id;
+				$url = dirname(dirname($SERVER))."/get/active/?activeid=".$active_id;
 				$result = array(
 					"code" => "100",
 					"msg" => "分享成功",
