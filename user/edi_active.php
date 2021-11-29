@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {
@@ -62,7 +62,7 @@ if(isset($_SESSION["session_user"])){
   $active_id = trim($_GET["activeid"]);
 
   // 获取当前wxid下的相关信息
-  $sql_active = "SELECT * FROM huoma_active WHERE active_id = '$active_id'";
+  $sql_active = "SELECT * FROM qrcode_active WHERE active_id = '$active_id'";
   $result_active = $conn->query($sql_active);
   if ($result_active->num_rows > 0) {
     while($row_active = $result_active->fetch_assoc()) {
@@ -111,7 +111,7 @@ if(isset($_SESSION["session_user"])){
           // 落地页域名
           echo '<select class="form-control" name="active_yuming" style="-webkit-appearance:none;"><option value="'.$active_yuming.'">落地页域名：'.$active_yuming.'</option>';
             // 获取落地页域名
-            $sql_ldym = "SELECT * FROM huoma_yuming WHERE ym_type='2'";
+            $sql_ldym = "SELECT * FROM qrcode_domain WHERE ym_type='2'";
             $result_ldym = $conn->query($sql_ldym);
             // 遍历列表
             if ($result_ldym->num_rows > 0) {

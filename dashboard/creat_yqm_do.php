@@ -28,7 +28,7 @@ if(isset($_SESSION["session_admin"])){
 
 		// 插入数据库的字符编码设为utf8
 		mysqli_query($conn, "SET NAMES UTF-8");
-		$sql_insert_yqm = "INSERT INTO huoma_yqm (yqm,yqm_status,yqm_daynum) VALUES ('$yaoqingma','1','$tianshu')";
+		$sql_insert_yqm = "INSERT INTO qrcode_invitecode (yqm,yqm_status,yqm_daynum) VALUES ('$yaoqingma','1','$tianshu')";
 	    if ($conn->query($sql_insert_yqm) === TRUE) {
 
 		    // 导入成功

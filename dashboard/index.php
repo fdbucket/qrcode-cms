@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {
@@ -66,18 +66,18 @@ if(isset($_SESSION["session_admin"])){
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取总用户数
-  $sql_total_user = "SELECT * FROM huoma_user";
+  $sql_total_user = "SELECT * FROM qrcode_user";
   $result_total_user = $conn->query($sql_total_user);
   $total_user_num = $result_total_user->num_rows;
 
   // 获取今天新增用户数
   $today_date = date("Y-m-d");
-  $sql_today_reg = "SELECT * FROM huoma_user WHERE reg_time LIKE '%$today_date%'";
+  $sql_today_reg = "SELECT * FROM qrcode_user WHERE reg_time LIKE '%$today_date%'";
   $result_today_reg = $conn->query($sql_today_reg);
   $today_reg_num = $result_today_reg->num_rows;
 
   // 获取今天收款数
-  $sql_today_pay = "SELECT pay_money FROM huoma_order WHERE pay_time LIKE '%$today_date%'";
+  $sql_today_pay = "SELECT pay_money FROM qrcode_order WHERE pay_time LIKE '%$today_date%'";
   $result_today_pay = $conn->query($sql_today_pay);
   if ($result_today_pay->num_rows > 0) {
     $pay_nums = 0;
@@ -104,15 +104,15 @@ if(isset($_SESSION["session_admin"])){
   <!-- 电脑端横排列表 -->
   <div class="left-nav">
     <a href="index.php" class="btn btn-dark">数据看板</a>
-    <a href="./qun.php?t=home/qun&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">微信群活码</a>
-    <a href="./wx.php?t=home/wx&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">客服活码</a>
-    <a href="./active.php?t=home/active&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">活动码</a>
-    <a href="./user.php?t=home/user&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">用户管理</a>
-    <a href="./order.php?t=home/order&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">订单管理</a>
-    <a href="./taocan.php?t=home/taocan&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">续费套餐</a>
-    <a href="./yqm.php?t=home/yqm&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">邀请码</a>
-    <a href="./addons.php?t=home/addons&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">插件中心</a>
-    <a href="./set.php?t=home/set&lang=zh_CN&token='.md5(uniqid()).'" class="btn btn-light">系统设置</a>
+    <a href="./qun.php" class="btn btn-light">微信群活码</a>
+    <a href="./wx.php" class="btn btn-light">客服活码</a>
+    <a href="./active.php" class="btn btn-light">活动码</a>
+    <a href="./user.php" class="btn btn-light">用户管理</a>
+    <a href="./order.php" class="btn btn-light">订单管理</a>
+    <a href="./taocan.php" class="btn btn-light">续费套餐</a>
+    <a href="./yqm.php" class="btn btn-light">邀请码</a>
+    <a href="./addons.php" class="btn btn-light">插件中心</a>
+    <a href="./set.php" class="btn btn-light">系统设置</a>
   </div>';
 
   echo '<!-- 右侧布局 -->

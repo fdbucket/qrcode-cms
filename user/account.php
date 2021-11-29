@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {
@@ -78,19 +78,19 @@ if(isset($_SESSION["session_user"])){
   </div>';
 
   // 获取账号信息
-  $sql = "SELECT * FROM huoma_user WHERE user ='".$_SESSION["session_user"]."'";
+  $sql = "SELECT * FROM qrcode_user WHERE user ='".$_SESSION["session_user"]."'";
   $result = $conn->query($sql);
 
   // 获取套餐列表
-  $sql_tc = "SELECT * FROM huoma_taocan";
+  $sql_tc = "SELECT * FROM qrcode_package";
   $result_tc = $conn->query($sql_tc);
 
   // 获取微信支付API
-  $sql_wxpay = "SELECT * FROM huoma_payselect WHERE paytype='wx' AND payselect='2'";
+  $sql_wxpay = "SELECT * FROM qrcode_payment WHERE paytype='wx' AND payselect='2'";
   $result_wxpay = $conn->query($sql_wxpay);
 
   // 获取支付宝API
-  $sql_alipay = "SELECT * FROM huoma_payselect WHERE paytype='ali' AND payselect='2'";
+  $sql_alipay = "SELECT * FROM qrcode_payment WHERE paytype='ali' AND payselect='2'";
   $result_alipay = $conn->query($sql_alipay);
   
   if ($result->num_rows > 0) {

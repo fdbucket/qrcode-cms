@@ -24,21 +24,21 @@ if(isset($_SESSION["session_admin"])){
 		// 设置字符编码为utf-8
 		mysqli_query($conn, "SET NAMES UTF-8");
 		// 获取当前状态
-		$sql_active_status = "SELECT * FROM huoma_active WHERE active_id = '$active_id'";
+		$sql_active_status = "SELECT * FROM qrcode_active WHERE active_id = '$active_id'";
 		$result_active_status = $conn->query($sql_active_status);
 		if ($result_active_status->num_rows > 0) {
 			while($row_active_status = $result_active_status->fetch_assoc()) {
 				$active_status = $row_active_status["active_status"];
 				if ($active_status == 3) {
 					// 更新数据库
-					mysqli_query($conn,"UPDATE huoma_active SET active_status='1' WHERE active_id=".$active_id);
+					mysqli_query($conn,"UPDATE qrcode_active SET active_status='1' WHERE active_id=".$active_id);
 					$result = array(
 						"code" => "100",
 						"msg" => "已启用"
 					);
 				}else{
 					// 更新数据库
-					mysqli_query($conn,"UPDATE huoma_active SET active_status='3' WHERE active_id=".$active_id);
+					mysqli_query($conn,"UPDATE qrcode_active SET active_status='3' WHERE active_id=".$active_id);
 					$result = array(
 						"code" => "100",
 						"msg" => "已停用"

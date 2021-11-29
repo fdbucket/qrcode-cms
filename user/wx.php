@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {
@@ -81,7 +81,7 @@ if(isset($_SESSION["session_user"])){
   </div>';
 
   //计算总活码数量
-  $sql_wx = "SELECT * FROM huoma_wx WHERE wx_user='$lguser'";
+  $sql_wx = "SELECT * FROM qrcode_wx WHERE wx_user='$lguser'";
   $result_wx = $conn->query($sql_wx);
   $allwx_num = $result_wx->num_rows;
 
@@ -110,11 +110,11 @@ if(isset($_SESSION["session_user"])){
   }
 
   // 获取落地页域名
-  $sql_ldym = "SELECT * FROM huoma_yuming WHERE ym_type='2'";
+  $sql_ldym = "SELECT * FROM qrcode_domain WHERE ym_type='2'";
   $result_ldym = $conn->query($sql_ldym);
 
   // 获取群活码列表
-  $sql = "SELECT * FROM huoma_wx WHERE wx_user='$lguser' ORDER BY ID DESC limit {$offset},{$lenght}";
+  $sql = "SELECT * FROM qrcode_wx WHERE wx_user='$lguser' ORDER BY ID DESC limit {$offset},{$lenght}";
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {

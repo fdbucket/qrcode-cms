@@ -21,12 +21,12 @@ if(isset($_SESSION["session_admin"])){
 	// 设置字符编码为utf-8
 	mysqli_query($conn, "SET NAMES UTF-8");
 
-	$sql_setval = "SELECT * FROM huoma_set";
+	$sql_setval = "SELECT * FROM qrcode_settings";
   	$result_setval = $conn->query($sql_setval);
 
   	if ($result_setval->num_rows > 0) {
   		// 更新数据库
-		$sql_update_set = "UPDATE huoma_set SET title='$title',keywords='$keywords',description='$description',favicon='$favicon' WHERE id='1'";
+		$sql_update_set = "UPDATE qrcode_settings SET title='$title',keywords='$keywords',description='$description',favicon='$favicon' WHERE id='1'";
 		if ($conn->query($sql_update_set) === TRUE) {
 			$result = array(
 				"code" => "100",
@@ -40,7 +40,7 @@ if(isset($_SESSION["session_admin"])){
 		}
   	}else{
   		// 插入数据库
-		$sql_creat_set = "INSERT INTO huoma_set (title,keywords,description,favicon) VALUES ('$title','$keywords','$description','$favicon')";
+		$sql_creat_set = "INSERT INTO qrcode_settings (title,keywords,description,favicon) VALUES ('$title','$keywords','$description','$favicon')";
 		if ($conn->query($sql_creat_set) === TRUE) {
 			$result = array(
 				"code" => "100",

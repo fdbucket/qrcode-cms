@@ -72,7 +72,7 @@ if($user == "" && $pwd == "" && $email == "" && $yqm == ""){
 	$conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
 	// 验证邀请码
-	$sql_checkyqm = "SELECT * FROM huoma_yqm WHERE yqm = '$yqm'";
+	$sql_checkyqm = "SELECT * FROM qrcode_invitecode WHERE yqm = '$yqm'";
 	$result_yqm = $conn->query($sql_checkyqm);
 	 
 	if ($result_yqm->num_rows > 0) {
@@ -88,7 +88,7 @@ if($user == "" && $pwd == "" && $email == "" && $yqm == ""){
 				);
 	    	}else{
 	    		// 验证是否存在该账号
-				$sql_checkuser = "SELECT * FROM huoma_user WHERE user = '$user'";
+				$sql_checkuser = "SELECT * FROM qrcode_user WHERE user = '$user'";
 				$result_checkuser=mysqli_query($conn,$sql_checkuser);
 				$row_checkuser=mysqli_num_rows($result_checkuser);
 				if ($row_checkuser) {
@@ -100,7 +100,7 @@ if($user == "" && $pwd == "" && $email == "" && $yqm == ""){
 				}else{
 					$user_id = rand(10000,99999);// 生成uid
 					$expire_time = date("Y-m-d",strtotime("+".$daoqidate." day")); // 过期时间
-					$sql_creatuser = "INSERT INTO huoma_user (user_id, user, pwd, expire_time, email, user_status, user_limit) VALUES ('$user_id', '$user', '$pwd', '$expire_time', '$email', '1', '1')";
+					$sql_creatuser = "INSERT INTO qrcode_user (user_id, user, pwd, expire_time, email, user_status, user_limit) VALUES ('$user_id', '$user', '$pwd', '$expire_time', '$email', '1', '1')";
 					// 验证是否成功
 					if ($conn->query($sql_creatuser) === TRUE) {
 					    $result = array(
@@ -110,7 +110,7 @@ if($user == "" && $pwd == "" && $email == "" && $yqm == ""){
 
 					// 注册成功后，邀请码的状态修改为已使用
 					$usetime = date('Y-m-d H:i:s',time());
-					mysqli_query($conn,"UPDATE huoma_yqm SET yqm_status='2',yqm_usetime='$usetime' WHERE yqm='$yqm'");
+					mysqli_query($conn,"UPDATE qrcode_invitecode SET yqm_status='2',yqm_usetime='$usetime' WHERE yqm='$yqm'");
 
 					$sendurl = dirname(dirname('http://'.$_SERVER['HTTP_HOST'].$_SERVER["REQUEST_URI"])).'/email/send_reg.php?email='.$email.'&user='.$user.'&pwd='.$pwd;
 					file_get_contents($sendurl);

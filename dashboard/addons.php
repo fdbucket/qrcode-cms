@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {

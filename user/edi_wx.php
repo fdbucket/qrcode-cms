@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {
@@ -61,7 +61,7 @@ if(isset($_SESSION["session_user"])){
   $wx_id = trim($_GET["wxid"]);
 
   // 获取当前wxid下的相关信息
-  $sql_wx = "SELECT * FROM huoma_wx WHERE wx_id = '$wx_id'";
+  $sql_wx = "SELECT * FROM qrcode_wx WHERE wx_id = '$wx_id'";
   $result_wx = $conn->query($sql_wx);
   if ($result_wx->num_rows > 0) {
     while($row_wx = $result_wx->fetch_assoc()) {
@@ -106,7 +106,7 @@ if(isset($_SESSION["session_user"])){
           // 落地页域名
           echo '<select class="form-control" name="wx_ldym" style="-webkit-appearance:none;"><option value="'.$wx_ldym.'">落地页域名：'.$wx_ldym.'</option>';
             // 获取落地页域名
-            $sql_ldym = "SELECT * FROM huoma_yuming WHERE ym_type='2'";
+            $sql_ldym = "SELECT * FROM qrcode_domain WHERE ym_type='2'";
             $result_ldym = $conn->query($sql_ldym);
             // 遍历列表
             if ($result_ldym->num_rows > 0) {
@@ -202,7 +202,7 @@ if(isset($_SESSION["session_user"])){
             <tbody>';
 
             // 获取当前活码id下的子码
-            $sql_zima = "SELECT * FROM huoma_wxzima WHERE wx_id = '$wx_id' ORDER BY ID ASC";
+            $sql_zima = "SELECT * FROM qrcode_wxsub WHERE wx_id = '$wx_id' ORDER BY ID ASC";
             $result_zima = $conn->query($sql_zima);
             if ($result_zima->num_rows > 0) {
               while($row_zima = $result_zima->fetch_assoc()) {

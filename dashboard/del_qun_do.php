@@ -22,9 +22,9 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 删除活码数据
-		mysqli_query($conn,"DELETE FROM huoma_qun WHERE qun_hmid=".$qun_hmid);
+		mysqli_query($conn,"DELETE FROM qrcode_qun WHERE qun_hmid=".$qun_hmid);
 		// 删除子码数据
-		mysqli_query($conn,"DELETE FROM huoma_qunzima WHERE hmid=".$qun_hmid);
+		mysqli_query($conn,"DELETE FROM qrcode_qunsub WHERE hmid=".$qun_hmid);
 		// 返回结果
 		$result = array(
 			"code" => "100",

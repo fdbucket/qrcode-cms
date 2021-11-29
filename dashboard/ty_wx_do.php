@@ -24,21 +24,21 @@ if(isset($_SESSION["session_admin"])){
 		// 设置字符编码为utf-8
 		mysqli_query($conn, "SET NAMES UTF-8");
 		// 获取当前状态
-		$sql_wx_status = "SELECT * FROM huoma_wx WHERE wx_id = '$wx_id'";
+		$sql_wx_status = "SELECT * FROM qrcode_wx WHERE wx_id = '$wx_id'";
 		$result_wx_status = $conn->query($sql_wx_status);
 		if ($result_wx_status->num_rows > 0) {
 			while($row_wx_status = $result_wx_status->fetch_assoc()) {
 				$wx_status = $row_wx_status["wx_status"];
 				if ($wx_status == 3) {
 					// 更新数据库
-					mysqli_query($conn,"UPDATE huoma_wx SET wx_status='1' WHERE wx_id=".$wx_id);
+					mysqli_query($conn,"UPDATE qrcode_wx SET wx_status='1' WHERE wx_id=".$wx_id);
 					$result = array(
 						"code" => "100",
 						"msg" => "已启用"
 					);
 				}else{
 					// 更新数据库
-					mysqli_query($conn,"UPDATE huoma_wx SET wx_status='3' WHERE wx_id=".$wx_id);
+					mysqli_query($conn,"UPDATE qrcode_wx SET wx_status='3' WHERE wx_id=".$wx_id);
 					$result = array(
 						"code" => "100",
 						"msg" => "已停用"

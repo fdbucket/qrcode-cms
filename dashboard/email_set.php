@@ -56,7 +56,7 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 
   // 获取设置参数
-  $sql_setval = "SELECT * FROM huoma_set";
+  $sql_setval = "SELECT * FROM qrcode_settings";
   $result_setval = $conn->query($sql_setval);
 
   if ($result_setval->num_rows > 0) {

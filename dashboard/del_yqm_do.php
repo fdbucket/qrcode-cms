@@ -22,7 +22,7 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 删除yqm数据
-		$del_sql = "DELETE FROM huoma_yqm WHERE yqm='$yqm'";
+		$del_sql = "DELETE FROM qrcode_invitecode WHERE yqm='$yqm'";
 		if ($conn->query($del_sql) === TRUE) {
 			// 返回结果
 			$result = array(

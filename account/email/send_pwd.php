@@ -9,7 +9,7 @@ include '../../db_config/db_config.php';
 $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
 // 获取群活码列表
-$sql_emailinfo = "SELECT * FROM huoma_set WHERE id='1'";
+$sql_emailinfo = "SELECT * FROM qrcode_settings WHERE id='1'";
 $result_emailinfo = $conn->query($sql_emailinfo);
 
 if ($result_emailinfo->num_rows > 0) {

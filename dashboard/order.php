@@ -50,13 +50,13 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 
   if (trim(empty($_GET["order_no"]))) {
-    $sql_order = "SELECT * FROM huoma_order";
+    $sql_order = "SELECT * FROM qrcode_order";
   }else{
-    $sql_order = "SELECT * FROM huoma_order WHERE order_no = '$_GET[order_no]'";
+    $sql_order = "SELECT * FROM qrcode_order WHERE order_no = '$_GET[order_no]'";
   }
 
   //计算总活码数量
-  $sql_order = "SELECT * FROM huoma_order";
+  $sql_order = "SELECT * FROM qrcode_order";
   $result_order = $conn->query($sql_order);
   $allorder_num = $result_order->num_rows;
 
@@ -86,9 +86,9 @@ if(isset($_SESSION["session_admin"])){
 
   // 获取订单列表
   if (trim(empty($_GET["order_no"]))) {
-    $sql = "SELECT * FROM huoma_order ORDER BY ID DESC limit {$offset},{$lenght}";
+    $sql = "SELECT * FROM qrcode_order ORDER BY ID DESC limit {$offset},{$lenght}";
   }else{
-    $sql = "SELECT * FROM huoma_order WHERE order_no = '$_GET[order_no]' ORDER BY ID DESC limit {$offset},{$lenght}";
+    $sql = "SELECT * FROM qrcode_order WHERE order_no = '$_GET[order_no]' ORDER BY ID DESC limit {$offset},{$lenght}";
   }
 
   $result = $conn->query($sql);

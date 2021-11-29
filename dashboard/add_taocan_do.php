@@ -39,7 +39,7 @@ if(isset($_SESSION["session_admin"])){
 		mysqli_query($conn, "SET NAMES UTF-8");
 		$tc_id = rand(100000,999999);
 		// 插入数据库
-		$sql_creat_tc = "INSERT INTO huoma_taocan (tc_title,tc_id,tc_days,tc_price) VALUES ('$tc_title','$tc_id','$tc_days','$tc_price')";
+		$sql_creat_tc = "INSERT INTO qrcode_package (tc_title,tc_id,tc_days,tc_price) VALUES ('$tc_title','$tc_id','$tc_days','$tc_price')";
 		
 		if ($conn->query($sql_creat_tc) === TRUE) {
 		    $result = array(

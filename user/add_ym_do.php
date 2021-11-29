@@ -39,7 +39,7 @@ if(isset($_SESSION["session_user"])){
 		// 字符编码设为utf8
 		mysqli_query($conn, "SET NAMES UTF-8"); 
 		// 插入数据库
-		$sql_creat_wx = "INSERT INTO huoma_yuming (yuming) VALUES ('$yuming')";
+		$sql_creat_wx = "INSERT INTO qrcode_domain (yuming) VALUES ('$yuming')";
 		
 		if ($conn->query($sql_creat_wx) === TRUE) {
 		    $result = array(

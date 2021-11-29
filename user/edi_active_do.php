@@ -55,7 +55,7 @@ if(isset($_SESSION["session_user"])){
 		// 设置字符编码为utf-8
 		mysqli_query($conn, "SET NAMES UTF-8");
 		// 更新数据库
-		mysqli_query($conn,"UPDATE huoma_active SET active_title='$active_title',active_yuming='$active_yuming',active_qrcode='$active_qrcode',active_status='$active_status',active_update_time='$date',active_url='$active_url',active_content='$active_content',active_type='$active_type',active_status='$active_status',active_shuoming='$active_shuoming',active_endtime='$active_endtime' WHERE active_id=".$active_id);
+		mysqli_query($conn,"UPDATE qrcode_active SET active_title='$active_title',active_yuming='$active_yuming',active_qrcode='$active_qrcode',active_status='$active_status',active_update_time='$date',active_url='$active_url',active_content='$active_content',active_type='$active_type',active_status='$active_status',active_shuoming='$active_shuoming',active_endtime='$active_endtime' WHERE active_id=".$active_id);
 		$result = array(
 			"code" => "100",
 			"msg" => "更新成功"

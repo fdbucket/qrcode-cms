@@ -63,7 +63,7 @@ if(isset($_SESSION["session_admin"])){
 					// 截取|前面的内容
 					$yaoqingma = substr($txt_row, 0, strrpos($txt_row, "|"));
 					// 插入数据库
-				    $sql_insert_yqm = "INSERT INTO huoma_yqm (yqm,yqm_status,yqm_daynum) VALUES ('$yaoqingma','1','$tianshu')";
+				    $sql_insert_yqm = "INSERT INTO qrcode_invitecode (yqm,yqm_status,yqm_daynum) VALUES ('$yaoqingma','1','$tianshu')";
 				    if ($conn->query($sql_insert_yqm) === TRUE) {
 					    // 导入成功
 					    $result = array(

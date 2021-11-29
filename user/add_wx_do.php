@@ -45,13 +45,13 @@ if(isset($_SESSION["session_user"])){
 		// 字符编码设为utf8
 		mysqli_query($conn, "SET NAMES UTF-8"); 
 		// 插入数据库
-		$sql_creat_wx = "INSERT INTO huoma_wx (wx_title,wx_ldym,wx_id,wx_moshi,wx_update_time,wx_user) VALUES ('$wx_title','$wx_ldym','$wx_id','$wx_moshi','$wx_update_time','$lguser')";
+		$sql_creat_wx = "INSERT INTO qrcode_wx (wx_title,wx_ldym,wx_id,wx_moshi,wx_update_time,wx_user) VALUES ('$wx_title','$wx_ldym','$wx_id','$wx_moshi','$wx_update_time','$lguser')";
 		
 		if ($conn->query($sql_creat_wx) === TRUE) {
 
 			// 创建5个子码
 			$update_time = date("Y-m-d");
-			$conn->query("INSERT INTO huoma_wxzima (wx_id, zmid, update_time, xuhao) VALUES ('$wx_id','".rand(10000,99999)."','$update_time','1'),('$wx_id','".rand(10000,99999)."','$update_time','2'),('$wx_id','".rand(10000,99999)."','$update_time','3'),('$wx_id','".rand(10000,99999)."','$update_time','4'),('$wx_id','".rand(10000,99999)."','$update_time','5')");
+			$conn->query("INSERT INTO qrcode_wxsub (wx_id, zmid, update_time, xuhao) VALUES ('$wx_id','".rand(10000,99999)."','$update_time','1'),('$wx_id','".rand(10000,99999)."','$update_time','2'),('$wx_id','".rand(10000,99999)."','$update_time','3'),('$wx_id','".rand(10000,99999)."','$update_time','4'),('$wx_id','".rand(10000,99999)."','$update_time','5')");
 
 		    $result = array(
 				"code" => "100",

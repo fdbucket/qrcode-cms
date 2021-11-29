@@ -59,13 +59,13 @@ if(isset($_SESSION["session_user"])){
 		mysqli_query($conn, "SET NAMES UTF-8"); 
 
 		// 插入数据库
-		$sql_creat_qun = "INSERT INTO huoma_qun (qun_title,qun_hmid,qun_rkym,qun_ldym,qun_wx_status,qun_wx_qrcode,qun_creat_time,qun_user) VALUES ('$qun_title','$qun_hmid','$qun_rkym','$qun_ldym','$wx_status','$wx_qrcode','$qun_creat_time','$lguser')";
+		$sql_creat_qun = "INSERT INTO qrcode_qun (qun_title,qun_hmid,qun_rkym,qun_ldym,qun_wx_status,qun_wx_qrcode,qun_creat_time,qun_user) VALUES ('$qun_title','$qun_hmid','$qun_rkym','$qun_ldym','$wx_status','$wx_qrcode','$qun_creat_time','$lguser')";
 		
 		if ($conn->query($sql_creat_qun) === TRUE) {
 			
 			// 创建7个子码（一个默认群，6个备用群）
 			$update_time = date("Y-m-d");
-			$conn->query("INSERT INTO huoma_qunzima (hmid, zmid, update_time, xuhao) VALUES ('$qun_hmid','".rand(10000,99999)."','$update_time','1'),('$qun_hmid','".rand(10000,99999)."','$update_time','2'),('$qun_hmid','".rand(10000,99999)."','$update_time','3'),('$qun_hmid','".rand(10000,99999)."','$update_time','4'),('$qun_hmid','".rand(10000,99999)."','$update_time','5'),('$qun_hmid','".rand(10000,99999)."','$update_time','6'),('$qun_hmid','".rand(10000,99999)."','$update_time','7')");
+			$conn->query("INSERT INTO qrcode_qunsub (hmid, zmid, update_time, xuhao) VALUES ('$qun_hmid','".rand(10000,99999)."','$update_time','1'),('$qun_hmid','".rand(10000,99999)."','$update_time','2'),('$qun_hmid','".rand(10000,99999)."','$update_time','3'),('$qun_hmid','".rand(10000,99999)."','$update_time','4'),('$qun_hmid','".rand(10000,99999)."','$update_time','5'),('$qun_hmid','".rand(10000,99999)."','$update_time','6'),('$qun_hmid','".rand(10000,99999)."','$update_time','7')");
 
 		    $result = array(
 				"code" => "100",

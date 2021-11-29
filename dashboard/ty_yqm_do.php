@@ -24,14 +24,14 @@ if(isset($_SESSION["session_admin"])){
 		// 设置字符编码为utf-8
 		mysqli_query($conn, "SET NAMES UTF-8");
 		// 获取当前状态
-		$sql_yqm_status = "SELECT * FROM huoma_yqm WHERE yqm = '$yqm'";
+		$sql_yqm_status = "SELECT * FROM qrcode_invitecode WHERE yqm = '$yqm'";
 		$result_yqm_status = $conn->query($sql_yqm_status);
 		if ($result_yqm_status->num_rows > 0) {
 			while($row_yqm_status = $result_yqm_status->fetch_assoc()) {
 				$yqm_status = $row_yqm_status["yqm_status"];
 				if ($yqm_status == 2) {
 					// 更新数据库
-					$update_sql = "UPDATE huoma_yqm SET yqm_status='1' WHERE yqm='$yqm'";
+					$update_sql = "UPDATE qrcode_invitecode SET yqm_status='1' WHERE yqm='$yqm'";
 					if ($conn->query($update_sql) === TRUE) {
 						$result = array(
 							"code" => "100",
@@ -46,7 +46,7 @@ if(isset($_SESSION["session_admin"])){
 					
 				}else if ($yqm_status == 1) {
 					// 更新数据库
-					$update_sql = "UPDATE huoma_yqm SET yqm_status='2' WHERE yqm='$yqm'";
+					$update_sql = "UPDATE qrcode_invitecode SET yqm_status='2' WHERE yqm='$yqm'";
 					if ($conn->query($update_sql) === TRUE) {
 						$result = array(
 							"code" => "100",

@@ -19,7 +19,7 @@ if(isset($_SESSION["session_user"])){
 		);
 	}else{
 		// 获取当前zmid的详细内容
-		$sql_zminfo = "SELECT * FROM huoma_wxzima WHERE zmid = '$zmid'";
+		$sql_zminfo = "SELECT * FROM qrcode_wxsub WHERE zmid = '$zmid'";
 		$result_zminfo = $conn->query($sql_zminfo);
 		if ($result_zminfo->num_rows > 0) {
 			while($row_zminfo = $result_zminfo->fetch_assoc()) {

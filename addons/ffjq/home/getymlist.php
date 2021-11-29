@@ -19,7 +19,7 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 获取域名列表
-		$sql_ymlist = "SELECT * FROM huoma_yuming WHERE ym_type = '$ymtype'";
+		$sql_ymlist = "SELECT * FROM qrcode_domain WHERE ym_type = '$ymtype'";
 		$result_ymlist = $conn->query($sql_ymlist);
 		if ($result_ymlist->num_rows > 0) {
 			// 将所有结果保存到数组

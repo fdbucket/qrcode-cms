@@ -70,7 +70,7 @@ if(isset($_SESSION["session_user"])){
 		// 字符编码设为utf8
 		mysqli_query($conn, "SET NAMES UTF-8"); 
 		// 插入数据库
-		$sql_creat_active = "INSERT INTO huoma_active (active_title,active_id,active_yuming,active_qrcode,active_update_time,active_url,active_shuoming,active_type,active_content,active_user,active_endtime) VALUES ('$active_title','$active_id','$active_yuming','$active_qrcode','$active_update_time','$active_url','$active_shuoming','$active_type','$active_content','$lguser','$active_endtime')";
+		$sql_creat_active = "INSERT INTO qrcode_active (active_title,active_id,active_yuming,active_qrcode,active_update_time,active_url,active_shuoming,active_type,active_content,active_user,active_endtime) VALUES ('$active_title','$active_id','$active_yuming','$active_qrcode','$active_update_time','$active_url','$active_shuoming','$active_type','$active_content','$lguser','$active_endtime')";
 		
 		if ($conn->query($sql_creat_active) === TRUE) {
 		    $result = array(

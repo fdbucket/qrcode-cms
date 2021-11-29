@@ -19,7 +19,7 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 获取落地页域名
-		$sql_yuming = "SELECT * FROM huoma_qun WHERE qun_hmid = '$qun_hmid'";
+		$sql_yuming = "SELECT * FROM qrcode_qun WHERE qun_hmid = '$qun_hmid'";
 		$result_yuming = $conn->query($sql_yuming);
 		if ($result_yuming->num_rows > 0) {
 			while($row_yuming = $result_yuming->fetch_assoc()) {

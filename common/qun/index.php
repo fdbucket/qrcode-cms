@@ -41,7 +41,7 @@
         }
 
         // 获取活码信息
-        $sql_hminfo = "SELECT * FROM huoma_qun WHERE qun_hmid =" . $qun_hmid;
+        $sql_hminfo = "SELECT * FROM qrcode_qun WHERE qun_hmid =" . $qun_hmid;
         $result_hminfo = $conn->query($sql_hminfo);
         while ($row_hminfo = $result_hminfo->fetch_assoc()) {
             $qun_status = $row_hminfo["qun_status"]; // 群活码启用状态
@@ -53,15 +53,15 @@
         }
 
         // 获取子码信息
-        $sql_zminfo = "SELECT * FROM huoma_qunzima WHERE hmid =" . $qun_hmid;
+        $sql_zminfo = "SELECT * FROM qrcode_qunsub WHERE hmid =" . $qun_hmid;
         $result_zminfo = $conn->query($sql_zminfo);
 
         // 更新活码访问量
-        mysqli_query($conn, "UPDATE huoma_qun SET qun_pv=qun_pv+1 WHERE qun_hmid =" . $qun_hmid);
+        mysqli_query($conn, "UPDATE qrcode_qun SET qun_pv=qun_pv+1 WHERE qun_hmid =" . $qun_hmid);
 
         // 获取用户账号信息
         // 判断用户账号到期
-        $sql_userinfo = "SELECT * FROM huoma_user WHERE user = '$qun_user'";
+        $sql_userinfo = "SELECT * FROM qrcode_user WHERE user = '$qun_user'";
         $result_userinfo = $conn->query($sql_userinfo);
         if ($result_userinfo->num_rows > 0) {
             while ($row_userinfo = $result_userinfo->fetch_assoc()) {
@@ -169,7 +169,7 @@
                         }
                         $exist = false;
                         // 更新当前子码的访问量
-                        mysqli_query($conn, "UPDATE huoma_qunzima SET fwl=fwl+1 WHERE zmid='$zmid'");
+                        mysqli_query($conn, "UPDATE qrcode_qunsub SET fwl=fwl+1 WHERE zmid='$zmid'");
 
                         // 将子码缓存到本地
                         if ($_COOKIE[$qun_hmid] == null) {

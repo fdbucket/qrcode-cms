@@ -22,13 +22,13 @@ if(isset($_SESSION["session_admin"])){
 	// 设置字符编码为utf-8
 	mysqli_query($conn, "SET NAMES UTF-8");
 
-	$sql_setval = "SELECT * FROM huoma_set";
+	$sql_setval = "SELECT * FROM qrcode_settings";
   	$result_setval = $conn->query($sql_setval);
 
   	if ($result_setval->num_rows > 0) {
 
   		// 更新数据库
-		$sql_update_set = "UPDATE huoma_set SET email_smtpserver='$email_smtpserver',email_smtpserverport='$email_smtpserverport',email_smtpusermail='$email_smtpusermail',email_smtpuser='$email_smtpuser',email_smtppass='$email_smtppass' WHERE id='1'";
+		$sql_update_set = "UPDATE qrcode_settings SET email_smtpserver='$email_smtpserver',email_smtpserverport='$email_smtpserverport',email_smtpusermail='$email_smtpusermail',email_smtpuser='$email_smtpuser',email_smtppass='$email_smtppass' WHERE id='1'";
 		
 		if ($conn->query($sql_update_set) === TRUE) {
 			$result = array(
@@ -44,7 +44,7 @@ if(isset($_SESSION["session_admin"])){
   	}else{
   		
   		// 插入数据库
-		$sql_creat_set = "INSERT INTO huoma_set (email_smtpserver,email_smtpserverport,email_smtpusermail,email_smtpuser,email_smtppass) VALUES ('$email_smtpserver','$email_smtpserverport','$email_smtpusermail','$email_smtpuser','$email_smtppass')";
+		$sql_creat_set = "INSERT INTO qrcode_settings (email_smtpserver,email_smtpserverport,email_smtpusermail,email_smtpuser,email_smtppass) VALUES ('$email_smtpserver','$email_smtpserverport','$email_smtpusermail','$email_smtpuser','$email_smtppass')";
 		
 		if ($conn->query($sql_creat_set) === TRUE) {
 			$result = array(

@@ -53,7 +53,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     }
 
     // 用户表
-    $huoma_user = "CREATE TABLE huoma_user (
+    $qrcode_user = "CREATE TABLE qrcode_user (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL, 
     user VARCHAR(32),
     pwd VARCHAR(32),
@@ -65,7 +65,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     email VARCHAR(32))";
 
     // 微信活码表
-    $huoma_wx = "CREATE TABLE huoma_wx (
+    $qrcode_wx = "CREATE TABLE qrcode_wx (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     wx_title VARCHAR(32),
     wx_id VARCHAR(32),
@@ -78,21 +78,21 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     wx_user VARCHAR(32))";
 
     // 微信子码表
-    $huoma_wxzima = "CREATE TABLE huoma_wxzima (
+    $qrcode_wxsub = "CREATE TABLE qrcode_wxsub (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     wx_id VARCHAR(32),
     zmid VARCHAR(32),
     xuhao INT(11),
-  	fwl VARCHAR(32) DEFAULT '0',
-  	qrcode TEXT(300),
-  	update_time VARCHAR(32),
-  	zima_status VARCHAR(32) DEFAULT '2',
-  	wx_num VARCHAR(32),
-  	wx_beizhu TEXT(300),
-  	wx_yuzhi VARCHAR(32) DEFAULT '0')";
+    fwl VARCHAR(32) DEFAULT '0',
+    qrcode TEXT(300),
+    update_time VARCHAR(32),
+    zima_status VARCHAR(32) DEFAULT '2',
+    wx_num VARCHAR(32),
+    wx_beizhu TEXT(300),
+    wx_yuzhi VARCHAR(32) DEFAULT '0')";
 
     // 邀请码表
-    $huoma_yqm = "CREATE TABLE huoma_yqm (
+    $qrcode_invitecode = "CREATE TABLE qrcode_invitecode (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     yqm VARCHAR(32),
     yqm_status INT(11),
@@ -100,13 +100,13 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     yqm_daynum INT(11))";
 
     // 落地页域名表
-    $huoma_yuming = "CREATE TABLE huoma_yuming (
+    $qrcode_domain = "CREATE TABLE qrcode_domain (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     ym_type VARCHAR(10),
     yuming TEXT(300))";
 
     // 续费套餐表
-    $huoma_taocan = "CREATE TABLE huoma_taocan (
+    $qrcode_package = "CREATE TABLE qrcode_package (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     tc_title VARCHAR(32),
     tc_id VARCHAR(32),
@@ -114,7 +114,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     tc_price VARCHAR(32))";
 
     // 系统设置表
-    $huoma_set = "CREATE TABLE huoma_set (
+    $qrcode_settings = "CREATE TABLE qrcode_settings (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     title TEXT(300) ,
     keywords TEXT(300),
@@ -127,7 +127,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     email_smtppass VARCHAR(64))";
 
     // 群子码表
-    $huoma_qunzima = "CREATE TABLE huoma_qunzima (
+    $qrcode_qunsub = "CREATE TABLE qrcode_qunsub (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     hmid VARCHAR(32),
     zmid VARCHAR(32),
@@ -142,7 +142,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     code VARCHAR(32) DEFAULT '200')";
 
     // 群活码表
-    $huoma_qun = "CREATE TABLE huoma_qun (
+    $qrcode_qun = "CREATE TABLE qrcode_qun (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     qun_title VARCHAR(64),
     qun_hmid VARCHAR(32),
@@ -157,7 +157,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     qun_chongfu VARCHAR(32) DEFAULT '2')";
 
     // 支付接口表
-    $huoma_payselect = "CREATE TABLE huoma_payselect (
+    $qrcode_payment = "CREATE TABLE qrcode_payment (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     payapi VARCHAR(32),
     payselect VARCHAR(32) DEFAULT '1',
@@ -165,7 +165,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     paytitle VARCHAR(32))";
 
     // 订单表
-    $huoma_order = "CREATE TABLE huoma_order (
+    $qrcode_order = "CREATE TABLE qrcode_order (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     user_id VARCHAR(32),
     order_no VARCHAR(32),
@@ -175,7 +175,7 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     pay_type VARCHAR(32))";
 
     // 活动码表
-    $huoma_active = "CREATE TABLE huoma_active (
+    $qrcode_active = "CREATE TABLE qrcode_active (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     active_id VARCHAR(32),
     active_title VARCHAR(32),
@@ -192,22 +192,22 @@ if (empty($dburl) || empty($dbuser) || empty($dbpwd) || empty($dbname) || empty(
     active_user VARCHAR(32))";
 
     // 判断安装结果
-    if ( $conn->query($huoma_user) === TRUE
-      && $conn->query($huoma_wx) === TRUE
-      && $conn->query($huoma_wxzima) === TRUE
-      && $conn->query($huoma_yqm) === TRUE
-      && $conn->query($huoma_yuming) === TRUE
-      && $conn->query($huoma_taocan) === TRUE
-      && $conn->query($huoma_set) === TRUE
-      && $conn->query($huoma_qunzima) === TRUE
-      && $conn->query($huoma_qun) === TRUE
-      && $conn->query($huoma_payselect) === TRUE
-      && $conn->query($huoma_order) === TRUE
-      && $conn->query($huoma_active) === TRUE) {
+    if ( $conn->query($qrcode_user) === TRUE
+      && $conn->query($qrcode_wx) === TRUE
+      && $conn->query($qrcode_wxsub) === TRUE
+      && $conn->query($qrcode_invitecode) === TRUE
+      && $conn->query($qrcode_domain) === TRUE
+      && $conn->query($qrcode_package) === TRUE
+      && $conn->query($qrcode_settings) === TRUE
+      && $conn->query($qrcode_qunsub) === TRUE
+      && $conn->query($qrcode_qun) === TRUE
+      && $conn->query($qrcode_payment) === TRUE
+      && $conn->query($qrcode_order) === TRUE
+      && $conn->query($qrcode_active) === TRUE) {
 
       // 创建管理员账号
       $user_id = rand(10000,99999);
-      $sql_creat_admin_user = "INSERT INTO huoma_user (user, pwd, user_id, email, expire_time, user_limit) VALUES ('$user', '$pwd', '$user_id', '$email', '2030-12-31', '2')";
+      $sql_creat_admin_user = "INSERT INTO qrcode_user (user, pwd, user_id, email, expire_time, user_limit) VALUES ('$user', '$pwd', '$user_id', '$email', '2030-12-31', '2')";
       if (mysqli_query($conn, $sql_creat_admin_user)) {
 
         // 创建数据库配置文件

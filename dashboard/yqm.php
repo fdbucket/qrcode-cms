@@ -52,7 +52,7 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 
   //计算总活码数量
-  $sql_yqm = "SELECT * FROM huoma_yqm";
+  $sql_yqm = "SELECT * FROM qrcode_invitecode";
   $result_yqm = $conn->query($sql_yqm);
   $allyqm_num = $result_yqm->num_rows;
 
@@ -81,7 +81,7 @@ if(isset($_SESSION["session_admin"])){
   }
 
   // 获取群活码列表
-  $sql = "SELECT * FROM huoma_yqm ORDER BY ID DESC limit {$offset},{$lenght}";
+  $sql = "SELECT * FROM qrcode_invitecode ORDER BY ID DESC limit {$offset},{$lenght}";
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {

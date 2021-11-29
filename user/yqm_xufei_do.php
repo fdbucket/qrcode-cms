@@ -34,7 +34,7 @@ if(isset($_SESSION["session_user"])){
 		);
 	}else{
 		// 验证邀请码
-		$sql_checkyqm = "SELECT * FROM huoma_yqm WHERE yqm = '$yqmstr'";
+		$sql_checkyqm = "SELECT * FROM qrcode_invitecode WHERE yqm = '$yqmstr'";
 		$result_yqm = $conn->query($sql_checkyqm);
 		if ($result_yqm->num_rows > 0) {
 			// 获得当前邀请码的信息
@@ -55,7 +55,7 @@ if(isset($_SESSION["session_user"])){
 				$new_daoqidate = date('Y-m-d',strtotime("{$expire_time} + ".$daoqi_daynum." day"));
 				// 设置字符编码为utf-8
 				mysqli_query($conn, "SET NAMES UTF-8");
-				$xufei_sql = "UPDATE huoma_user SET expire_time='$new_daoqidate' WHERE user_id=".$userid;
+				$xufei_sql = "UPDATE qrcode_user SET expire_time='$new_daoqidate' WHERE user_id=".$userid;
 				if ($conn->query($xufei_sql) === TRUE) {
 					$result = array(
 						"code" => "100",
@@ -63,7 +63,7 @@ if(isset($_SESSION["session_user"])){
 					);
 					// 续费成功后，需要将邀请码状态修改为已使用
 					$usetime = date('Y-m-d H:i:s',time());
-					mysqli_query($conn,"UPDATE huoma_yqm SET yqm_status='2',yqm_usetime='$usetime' WHERE yqm='$yqmstr'");
+					mysqli_query($conn,"UPDATE qrcode_invitecode SET yqm_status='2',yqm_usetime='$usetime' WHERE yqm='$yqmstr'");
 				}else{
 					$result = array(
 						"code" => "106",

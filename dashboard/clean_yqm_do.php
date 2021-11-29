@@ -12,7 +12,7 @@ if(isset($_SESSION["session_admin"])){
 	// 创建连接
 	$conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
-	$del_sql = "truncate table huoma_yqm";
+	$del_sql = "truncate table qrcode_invitecode";
 	if ($conn->query($del_sql) === TRUE) {
 		// 返回结果
 		$result = array(

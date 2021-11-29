@@ -50,7 +50,7 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 
   // 获取套餐列表
-  $sql = "SELECT * FROM huoma_taocan ORDER BY ID DESC";
+  $sql = "SELECT * FROM qrcode_package ORDER BY ID DESC";
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {

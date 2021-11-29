@@ -42,7 +42,7 @@ if(isset($_SESSION["session_admin"])){
 		// 设置字符编码为utf-8
 		mysqli_query($conn, "SET NAMES UTF-8");
 		// 更新数据库
-		mysqli_query($conn,"UPDATE huoma_taocan SET tc_title='$tc_title',tc_days='$tc_days',tc_price='$tc_price' WHERE tc_id=".$tc_id);
+		mysqli_query($conn,"UPDATE qrcode_package SET tc_title='$tc_title',tc_days='$tc_days',tc_price='$tc_price' WHERE tc_id=".$tc_id);
 		$result = array(
 			"code" => "100",
 			"msg" => "更新成功"

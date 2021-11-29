@@ -32,10 +32,10 @@ if(isset($_SESSION["session_admin"])){
 
 		// 更新数据库
 		// 先把所有选项设置为1，即未设置状态
-		mysqli_query($conn,"UPDATE huoma_payselect SET payselect='1'");
+		mysqli_query($conn,"UPDATE qrcode_payment SET payselect='1'");
 		// 再把当前的id设置为2，即当前的设置为选择
-		mysqli_query($conn,"UPDATE huoma_payselect SET payselect='2' WHERE id=".$wxpay);
-		mysqli_query($conn,"UPDATE huoma_payselect SET payselect='2' WHERE id=".$alipay);
+		mysqli_query($conn,"UPDATE qrcode_payment SET payselect='2' WHERE id=".$wxpay);
+		mysqli_query($conn,"UPDATE qrcode_payment SET payselect='2' WHERE id=".$alipay);
 		$result = array(
 			"code" => "100",
 			"msg" => "设置成功"

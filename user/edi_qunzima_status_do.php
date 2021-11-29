@@ -24,7 +24,7 @@ if(isset($_SESSION["session_user"])){
 		// 设置字符编码为utf-8
 		mysqli_query($conn, "SET NAMES UTF-8");
 		// 获取当前状态
-		$sql_zima_status = "SELECT * FROM huoma_qunzima WHERE zmid = '$zmid'";
+		$sql_zima_status = "SELECT * FROM qrcode_qunsub WHERE zmid = '$zmid'";
 		$result_zima_status = $conn->query($sql_zima_status);
 		if ($result_zima_status->num_rows > 0) {
 			while($row_zima_status = $result_zima_status->fetch_assoc()) {
@@ -32,7 +32,7 @@ if(isset($_SESSION["session_user"])){
 				$qrcode = $row_zima_status["qrcode"];
 				if ($zima_status == 1) {
 					// 更新数据库
-					mysqli_query($conn,"UPDATE huoma_qunzima SET zima_status='2' WHERE zmid=".$zmid);
+					mysqli_query($conn,"UPDATE qrcode_qunsub SET zima_status='2' WHERE zmid=".$zmid);
 					$result = array(
 						"code" => "100",
 						"msg" => "已关闭"
@@ -46,7 +46,7 @@ if(isset($_SESSION["session_user"])){
 						);
 					}else{
 						// 更新数据库
-						mysqli_query($conn,"UPDATE huoma_qunzima SET zima_status='1' WHERE zmid=".$zmid);
+						mysqli_query($conn,"UPDATE qrcode_qunsub SET zima_status='1' WHERE zmid=".$zmid);
 						$result = array(
 							"code" => "100",
 							"msg" => "已开启"

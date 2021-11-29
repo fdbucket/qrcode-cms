@@ -59,7 +59,7 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 
   // 获取域名列表
-  $sql_yuming = "SELECT * FROM huoma_yuming ORDER BY ID DESC";
+  $sql_yuming = "SELECT * FROM qrcode_domain ORDER BY ID DESC";
   $result_yuming = $conn->query($sql_yuming);
   
   if ($result_yuming->num_rows > 0) {

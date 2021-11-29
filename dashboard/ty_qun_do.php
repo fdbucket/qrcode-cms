@@ -24,21 +24,21 @@ if(isset($_SESSION["session_admin"])){
 		// 设置字符编码为utf-8
 		mysqli_query($conn, "SET NAMES UTF-8");
 		// 获取当前状态
-		$sql_qun_status = "SELECT * FROM huoma_qun WHERE qun_hmid = '$qun_hmid'";
+		$sql_qun_status = "SELECT * FROM qrcode_qun WHERE qun_hmid = '$qun_hmid'";
 		$result_qun_status = $conn->query($sql_qun_status);
 		if ($result_qun_status->num_rows > 0) {
 			while($row_qun_status = $result_qun_status->fetch_assoc()) {
 				$qun_status = $row_qun_status["qun_status"];
 				if ($qun_status == 3) {
 					// 更新数据库
-					mysqli_query($conn,"UPDATE huoma_qun SET qun_status='1' WHERE qun_hmid=".$qun_hmid);
+					mysqli_query($conn,"UPDATE qrcode_qun SET qun_status='1' WHERE qun_hmid=".$qun_hmid);
 					$result = array(
 						"code" => "100",
 						"msg" => "已启用"
 					);
 				}else{
 					// 更新数据库
-					mysqli_query($conn,"UPDATE huoma_qun SET qun_status='3' WHERE qun_hmid=".$qun_hmid);
+					mysqli_query($conn,"UPDATE qrcode_qun SET qun_status='3' WHERE qun_hmid=".$qun_hmid);
 					$result = array(
 						"code" => "100",
 						"msg" => "已停用"

@@ -22,7 +22,7 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 删除活码数据
-		mysqli_query($conn,"DELETE FROM huoma_yuming WHERE id=".$ymid);
+		mysqli_query($conn,"DELETE FROM qrcode_domain WHERE id=".$ymid);
 		// 返回结果
 		$result = array(
 			"code" => "100",

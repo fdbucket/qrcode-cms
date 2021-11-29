@@ -19,7 +19,7 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 获取用户信息
-		$sql_taocan_info = "SELECT * FROM huoma_taocan WHERE tc_id = '$tc_id'";
+		$sql_taocan_info = "SELECT * FROM qrcode_package WHERE tc_id = '$tc_id'";
 		$result_taocan_info = $conn->query($sql_taocan_info);
 		if ($result_taocan_info->num_rows > 0) {
 			while($row_taocan_info = $result_taocan_info->fetch_assoc()) {

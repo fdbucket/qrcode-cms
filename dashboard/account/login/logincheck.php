@@ -26,7 +26,7 @@ if (empty($user)) {
 	// 创建连接
 	$conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 	 
-	$check_user = "SELECT * FROM huoma_user WHERE user='$user' AND pwd='$pwd'";
+	$check_user = "SELECT * FROM qrcode_user WHERE user='$user' AND pwd='$pwd'";
 	$result_user = $conn->query($check_user);
 	
 	// 验证结果

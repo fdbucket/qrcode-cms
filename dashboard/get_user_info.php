@@ -19,7 +19,7 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 获取用户信息
-		$sql_userinfo = "SELECT * FROM huoma_user WHERE user_id = '$userid'";
+		$sql_userinfo = "SELECT * FROM qrcode_user WHERE user_id = '$userid'";
 		$result_userinfo = $conn->query($sql_userinfo);
 		if ($result_userinfo->num_rows > 0) {
 			while($row_userinfo = $result_userinfo->fetch_assoc()) {

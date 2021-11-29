@@ -41,7 +41,7 @@
         }
 
         // 获取活码信息
-        $sql_hminfo = "SELECT * FROM huoma_active WHERE active_id =" . $active_id;
+        $sql_hminfo = "SELECT * FROM qrcode_active WHERE active_id =" . $active_id;
         $result_hminfo = $conn->query($sql_hminfo);
         while ($row_hminfo = $result_hminfo->fetch_assoc()) {
             $active_status = $row_hminfo["active_status"]; // 活动码启用状态
@@ -57,7 +57,7 @@
         }
 
         // 更新活码访问量
-        mysqli_query($conn, "UPDATE huoma_active SET active_pv=active_pv+1 WHERE active_id =" . $active_id);
+        mysqli_query($conn, "UPDATE qrcode_active SET active_pv=active_pv+1 WHERE active_id =" . $active_id);
 
         // 验证该活码是否存在
         if ($result_hminfo->num_rows > 0) {

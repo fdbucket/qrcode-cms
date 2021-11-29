@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {
@@ -121,11 +121,11 @@ if(isset($_SESSION["session_admin"])){
       }
 
       // 获取入口域名
-      $sql_rkym = "SELECT * FROM huoma_yuming WHERE ym_type='1'";
+      $sql_rkym = "SELECT * FROM qrcode_domain WHERE ym_type='1'";
       $result_rkym = $conn->query($sql_rkym);
 
       // 获取落地域名
-      $sql_ldym = "SELECT * FROM huoma_yuming WHERE ym_type='2'";
+      $sql_ldym = "SELECT * FROM qrcode_domain WHERE ym_type='2'";
       $result_ldym = $conn->query($sql_ldym);
 
       // 获取群列表

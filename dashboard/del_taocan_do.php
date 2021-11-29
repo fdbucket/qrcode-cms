@@ -22,7 +22,7 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 删除活码数据
-		mysqli_query($conn,"DELETE FROM huoma_taocan WHERE tc_id=".$tcid);
+		mysqli_query($conn,"DELETE FROM qrcode_package WHERE tc_id=".$tcid);
 		// 返回结果
 		$result = array(
 			"code" => "100",

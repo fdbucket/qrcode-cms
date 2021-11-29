@@ -41,7 +41,7 @@
         }
 
         // 获取活码信息
-        $sql_hminfo = "SELECT * FROM huoma_wx WHERE wx_id =" . $wx_id;
+        $sql_hminfo = "SELECT * FROM qrcode_wx WHERE wx_id =" . $wx_id;
         $result_hminfo = $conn->query($sql_hminfo);
         while ($row_hminfo = $result_hminfo->fetch_assoc()) {
             $wx_status = $row_hminfo["wx_status"]; // 微信活码启用状态
@@ -52,15 +52,15 @@
         }
 
         // 获取客服子码信息
-        $sql_zminfo = "SELECT * FROM huoma_wxzima WHERE wx_id = '$wx_id' AND zima_status = '1'";
+        $sql_zminfo = "SELECT * FROM qrcode_wxsub WHERE wx_id = '$wx_id' AND zima_status = '1'";
         $result_zminfo = $conn->query($sql_zminfo);
 
         // 更新活码访问量
-        mysqli_query($conn, "UPDATE huoma_wx SET wx_fwl=wx_fwl+1 WHERE wx_id =" . $wx_id);
+        mysqli_query($conn, "UPDATE qrcode_wx SET wx_fwl=wx_fwl+1 WHERE wx_id =" . $wx_id);
 
         // 获取用户账号信息
         // 判断用户账号到期
-        $sql_userinfo = "SELECT * FROM huoma_user WHERE user = '$wx_user'";
+        $sql_userinfo = "SELECT * FROM qrcode_user WHERE user = '$wx_user'";
         $result_userinfo = $conn->query($sql_userinfo);
         if ($result_userinfo->num_rows > 0) {
             while ($row_userinfo = $result_userinfo->fetch_assoc()) {
@@ -153,7 +153,7 @@
 
                             $exist = false;
                             // 更新当前子码的访问量
-                            mysqli_query($conn, "UPDATE huoma_wxzima SET fwl=fwl+1 WHERE zmid='$zmid'");
+                            mysqli_query($conn, "UPDATE qrcode_wxsub SET fwl=fwl+1 WHERE zmid='$zmid'");
 
                             // 在线提示
                             date_default_timezone_set('asia/shanghai');
@@ -223,7 +223,7 @@
 
                         $exist = false;
                         // 更新当前子码的访问量
-                        mysqli_query($conn, "UPDATE huoma_wxzima SET fwl=fwl+1 WHERE zmid='$zmid'");
+                        mysqli_query($conn, "UPDATE qrcode_wxsub SET fwl=fwl+1 WHERE zmid='$zmid'");
 
                         // 判断是否在线
                         if ($wx_online == '1') {

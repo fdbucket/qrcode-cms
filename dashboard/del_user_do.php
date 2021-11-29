@@ -22,7 +22,7 @@ if(isset($_SESSION["session_admin"])){
 		);
 	}else{
 		// 删除活码数据
-		mysqli_query($conn,"DELETE FROM huoma_user WHERE user_id=".$user_id);
+		mysqli_query($conn,"DELETE FROM qrcode_user WHERE user_id=".$user_id);
 		// 返回结果
 		$result = array(
 			"code" => "100",

@@ -40,7 +40,7 @@
 			// result为success就代表这是一个已支付的订单
 			// 查询数据库是否已经收到这笔异步订单
 			$conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
-			$sql_check_order = "SELECT * FROM huoma_order WHERE order_no = '$order_no'";
+			$sql_check_order = "SELECT * FROM qrcode_order WHERE order_no = '$order_no'";
 			$result_check_order = $conn->query($sql_check_order);
 			if ($result_check_order->num_rows > 0) {
 				// 已经收到异步通知，就不要再插入数据库
@@ -50,7 +50,7 @@
 				mysqli_query($conn, "SET NAMES UTF-8");
 
 				// 获取当前用户的过期日期
-		        $sql_checkuserinfo = "SELECT * FROM huoma_user WHERE user_id = '$user_id'";
+		        $sql_checkuserinfo = "SELECT * FROM qrcode_user WHERE user_id = '$user_id'";
 		        $result_checkuserinfo = $conn->query($sql_checkuserinfo);
 		        if ($result_checkuserinfo->num_rows > 0) {
 		            while($row_checkuserinfo = $result_checkuserinfo->fetch_assoc()) {
@@ -62,14 +62,14 @@
 		        }
 
 				// 还没收到异步通知，那就直接插入数据库
-				$sql_notify = "INSERT INTO huoma_order (user_id, order_no, pay_money, xufei_daynum, pay_type) VALUES ('$user_id', '$xddpay_order', '$realmoney', '$tc_days', '$pay_type_str')";
+				$sql_notify = "INSERT INTO qrcode_order (user_id, order_no, pay_money, xufei_daynum, pay_type) VALUES ('$user_id', '$xddpay_order', '$realmoney', '$tc_days', '$pay_type_str')";
 				if ($conn->query($sql_notify) === TRUE) {
 					// 插入数据库成功！
 		            // 更新续费结果
 		            // 计算过期时间（在即将到期的日期基础上，增加续费的天数，得出新的到期日期）
 		            $daoqi_daynum = $tc_days+1;
 		            $new_daoqidate = date('Y-m-d',strtotime("{$expire_time} + ".$daoqi_daynum." day"));
-		            $xufei_sql = "UPDATE huoma_user SET expire_time='$new_daoqidate' WHERE user_id=".$user_id;
+		            $xufei_sql = "UPDATE qrcode_user SET expire_time='$new_daoqidate' WHERE user_id=".$user_id;
 		            if ($conn->query($xufei_sql) === TRUE) {
 		                echo "success";
 		            }else{

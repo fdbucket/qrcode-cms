@@ -50,9 +50,9 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 
   if (trim(empty($_GET["user"]))) {
-     $sql_user = "SELECT * FROM huoma_user";
+     $sql_user = "SELECT * FROM qrcode_user";
   }else{
-    $sql_user = "SELECT * FROM huoma_user WHERE user = '$_GET[user]'";
+    $sql_user = "SELECT * FROM qrcode_user WHERE user = '$_GET[user]'";
   }
 
   //计算总用户数量
@@ -85,9 +85,9 @@ if(isset($_SESSION["session_admin"])){
 
   // 获取用户列表
   if (trim(empty($_GET["user"]))) {
-    $sql = "SELECT * FROM huoma_user ORDER BY ID DESC limit {$offset},{$lenght}";
+    $sql = "SELECT * FROM qrcode_user ORDER BY ID DESC limit {$offset},{$lenght}";
   }else{
-    $sql = "SELECT * FROM huoma_user WHERE user = '$_GET[user]' ORDER BY ID DESC limit {$offset},{$lenght}";
+    $sql = "SELECT * FROM qrcode_user WHERE user = '$_GET[user]' ORDER BY ID DESC limit {$offset},{$lenght}";
   }
 
   $result = $conn->query($sql);

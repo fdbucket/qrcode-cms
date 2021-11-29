@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {
@@ -87,7 +87,7 @@ if(isset($_SESSION["session_user"])){
   $qun_hmid = trim($_GET["hmid"]);
 
   // 获取当前活码id下的相关信息
-  $sql = "SELECT * FROM huoma_qun WHERE qun_hmid = '$qun_hmid'";
+  $sql = "SELECT * FROM qrcode_qun WHERE qun_hmid = '$qun_hmid'";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -137,7 +137,7 @@ if(isset($_SESSION["session_user"])){
     // 入口域名
     echo '<select class="form-control" name="qun_rkym" style="-webkit-appearance:none;"><option value="'.$qun_rkym.'">入口域名：'.$qun_rkym.'</option>';
       // 获取域名
-      $sql_rkym = "SELECT * FROM huoma_yuming WHERE ym_type='1'";
+      $sql_rkym = "SELECT * FROM qrcode_domain WHERE ym_type='1'";
       $result_rkym = $conn->query($sql_rkym);
       // 遍历列表
       if ($result_rkym->num_rows > 0) {
@@ -157,7 +157,7 @@ if(isset($_SESSION["session_user"])){
     // 落地域名
     echo '<select class="form-control" name="qun_ldym" style="-webkit-appearance:none;margin:15px 0;"><option value="'.$qun_ldym.'">落地域名：'.$qun_ldym.'</option>';
       // 获取域名
-      $sql_ldym = "SELECT * FROM huoma_yuming WHERE ym_type='2'";
+      $sql_ldym = "SELECT * FROM qrcode_domain WHERE ym_type='2'";
       $result_ldym = $conn->query($sql_ldym);
       // 遍历列表
       if ($result_ldym->num_rows > 0) {
@@ -274,7 +274,7 @@ if(isset($_SESSION["session_user"])){
       <tbody>';
 
       // 获取当前活码id下的子码
-      $sql_zima = "SELECT * FROM huoma_qunzima WHERE hmid = '$qun_hmid' ORDER BY ID ASC";
+      $sql_zima = "SELECT * FROM qrcode_qunsub WHERE hmid = '$qun_hmid' ORDER BY ID ASC";
       $result_zima = $conn->query($sql_zima);
       if ($result_zima->num_rows > 0) {
         while($row_zima = $result_zima->fetch_assoc()) {

@@ -58,7 +58,7 @@ if($return_code == 1){
     } 
     
     // 3、验证重复通知
-    $sql_check = "SELECT * FROM huoma_order WHERE order_no = '$out_trade_no'";
+    $sql_check = "SELECT * FROM qrcode_order WHERE order_no = '$out_trade_no'";
     $result = $conn->query($sql_check);
      
     if ($result->num_rows > 0) {
@@ -92,7 +92,7 @@ if($return_code == 1){
 
        mysqli_query($conn,"SET NAMES UTF8");
        // 获取当前用户的过期日期
-       $sql_checkuserinfo = "SELECT * FROM huoma_user WHERE user_id = '$user_id'";
+       $sql_checkuserinfo = "SELECT * FROM qrcode_user WHERE user_id = '$user_id'";
        $result_checkuserinfo = $conn->query($sql_checkuserinfo);
        if ($result_checkuserinfo->num_rows > 0) {
         while($row_checkuserinfo = $result_checkuserinfo->fetch_assoc()) {
@@ -103,14 +103,14 @@ if($return_code == 1){
        }
 
        // 否则需要插入数据库
-       $sql_insert = "INSERT INTO huoma_order (user_id, order_no, pay_money, xufei_daynum, pay_type) VALUES ('$user_id', '$out_trade_no', '$total_fee_num', '$tc_days', '$pay_type_text')";
+       $sql_insert = "INSERT INTO qrcode_order (user_id, order_no, pay_money, xufei_daynum, pay_type) VALUES ('$user_id', '$out_trade_no', '$total_fee_num', '$tc_days', '$pay_type_text')";
        if ($conn->query($sql_insert) === TRUE) {
             // 插入数据库成功！
             // 更新续费结果
             // 计算过期时间（在即将到期的日期基础上，增加续费的天数，得出新的到期日期）
             $daoqi_daynum = $tc_days+1;
             $new_daoqidate = date('Y-m-d',strtotime("{$expire_time} + ".$daoqi_daynum." day"));
-            $xufei_sql = "UPDATE huoma_user SET expire_time='$new_daoqidate' WHERE user_id=".$user_id;
+            $xufei_sql = "UPDATE qrcode_user SET expire_time='$new_daoqidate' WHERE user_id=".$user_id;
             if ($conn->query($xufei_sql) === TRUE) {
                 echo "续费成功";
             }else{

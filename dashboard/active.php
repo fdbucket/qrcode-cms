@@ -49,7 +49,7 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 
   //计算总活码数量
-  $sql_active = "SELECT * FROM huoma_active";
+  $sql_active = "SELECT * FROM qrcode_active";
   $result_active = $conn->query($sql_active);
   $allactive_num = $result_active->num_rows;
 
@@ -78,11 +78,11 @@ if(isset($_SESSION["session_admin"])){
   }
 
   // 获取落地页域名
-  $sql_ym = "SELECT * FROM huoma_yuming";
+  $sql_ym = "SELECT * FROM qrcode_domain";
   $result_ym = $conn->query($sql_ym);
 
   // 获取群活码列表
-  $sql = "SELECT * FROM huoma_active ORDER BY ID DESC limit {$offset},{$lenght}";
+  $sql = "SELECT * FROM qrcode_active ORDER BY ID DESC limit {$offset},{$lenght}";
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {

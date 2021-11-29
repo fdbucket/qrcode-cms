@@ -89,17 +89,17 @@ if(isset($_SESSION["session_admin"])){
   echo '<div class="alert alert-primary">下方选择的支付接口，将用于线上交易支付，例如注册，续费。如果需要加入自己已有的支付接口，可以联系作者付费定制，付费标准是一个接口200元起，具体收费以沟通为准。作者联系方式请在作者博客找到：<a href="https://segmentfault.com/u/tanking" target="blank">https://segmentfault.com/u/tanking</a></div>';
   
   // 获取微信支付API选项
-  $sql_wxpay = "SELECT * FROM huoma_payselect WHERE paytype='wx' ORDER BY ID ASC";
+  $sql_wxpay = "SELECT * FROM qrcode_payment WHERE paytype='wx' ORDER BY ID ASC";
   $result_wxpay = $conn->query($sql_wxpay);
 
-  $sql_wxpay_select = "SELECT * FROM huoma_payselect WHERE paytype='wx' AND payselect='2'";
+  $sql_wxpay_select = "SELECT * FROM qrcode_payment WHERE paytype='wx' AND payselect='2'";
   $result_wxpay_select = $conn->query($sql_wxpay_select);
 
   // 获取支付宝API选项
-  $sql_alipay = "SELECT * FROM huoma_payselect WHERE paytype='ali' ORDER BY ID ASC";
+  $sql_alipay = "SELECT * FROM qrcode_payment WHERE paytype='ali' ORDER BY ID ASC";
   $result_alipay = $conn->query($sql_alipay);
 
-  $sql_alipay_select = "SELECT * FROM huoma_payselect WHERE paytype='ali' AND payselect='2'";
+  $sql_alipay_select = "SELECT * FROM qrcode_payment WHERE paytype='ali' AND payselect='2'";
   $result_alipay_select = $conn->query($sql_alipay_select);
   
   if ($result_wxpay->num_rows > 0 && $result_wxpay_select->num_rows > 0) {

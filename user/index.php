@@ -9,7 +9,7 @@
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   // 获取设置项
-  $sql_set = "SELECT * FROM huoma_set";
+  $sql_set = "SELECT * FROM qrcode_settings";
   $result_set = $conn->query($sql_set);
   if ($result_set->num_rows > 0) {
     while($row_set = $result_set->fetch_assoc()) {
@@ -110,7 +110,7 @@ if(isset($_SESSION["session_user"])){
     <a href="../account/exit?t=home/exit&lang=zh_CN&token='.md5(uniqid()).'"><button type="button" class="btn btn-zdylight">退出登陆</button></a></div>';
 
       //计算总活码数量
-      $sql_huoma = "SELECT * FROM huoma_qun WHERE qun_user='$lguser'";
+      $sql_huoma = "SELECT * FROM qrcode_qun WHERE qun_user='$lguser'";
       $result_huoma = $conn->query($sql_huoma);
       $allhuoma_num = $result_huoma->num_rows;
 
@@ -139,15 +139,15 @@ if(isset($_SESSION["session_user"])){
       }
 
       // 获取入口域名
-      $sql_rkym = "SELECT * FROM huoma_yuming WHERE ym_type='1'";
+      $sql_rkym = "SELECT * FROM qrcode_domain WHERE ym_type='1'";
       $result_rkym = $conn->query($sql_rkym);
 
       // 获取落地域名
-      $sql_ldym = "SELECT * FROM huoma_yuming WHERE ym_type='2'";
+      $sql_ldym = "SELECT * FROM qrcode_domain WHERE ym_type='2'";
       $result_ldym = $conn->query($sql_ldym);
 
       // 获取群活码列表
-      $sql = "SELECT * FROM huoma_qun WHERE qun_user='$lguser' ORDER BY ID DESC limit {$offset},{$lenght}";
+      $sql = "SELECT * FROM qrcode_qun WHERE qun_user='$lguser' ORDER BY ID DESC limit {$offset},{$lenght}";
       $result = $conn->query($sql);
        
       if ($result->num_rows > 0) {

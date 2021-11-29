@@ -32,7 +32,7 @@ if(isset($_SESSION["session_admin"])){
 		// 到期日期=当前日期+续期天数
 		$daoqi_date = date("Y-m-d",strtotime("+".$xufei_days." day"));
 		// 更新数据库
-		mysqli_query($conn,"UPDATE huoma_user SET expire_time='$daoqi_date' WHERE user_id=".$user_id);
+		mysqli_query($conn,"UPDATE qrcode_user SET expire_time='$daoqi_date' WHERE user_id=".$user_id);
 		$result = array(
 			"code" => "100",
 			"msg" => "已续期"
