@@ -60,7 +60,7 @@ if (empty($user)) {
 						'msg' => '登录成功'
 					);
 					session_start();
-					$_SESSION['huoma.dashboard'] = $user;
+					$_SESSION['session_admin'] = $user;
 				}
 			}else{
 				$result = array(

@@ -4,7 +4,7 @@ header("Content-type:application/json");
 
 // 开启session，判断登陆状态
 session_start();
-if(isset($_SESSION["huoma.dashboard"])){
+if(isset($_SESSION["session_admin"])){
 
 	$yaoqingma = trim($_POST['yqm']);
 	$tianshu = trim($_POST['tianshu']);

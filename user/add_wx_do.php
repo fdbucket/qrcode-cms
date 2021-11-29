@@ -5,10 +5,10 @@ header("Content-type:application/json");
 
 // 开启session，判断登陆状态
 session_start();
-if(isset($_SESSION["huoma.user"])){
+if(isset($_SESSION["session_user"])){
 
 	// 当前登录的用户
-	$lguser= $_SESSION["huoma.user"];
+	$lguser= $_SESSION["session_user"];
 
 	// 数据库配置
 	include '../db_config/db_config.php';

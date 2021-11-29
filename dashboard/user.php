@@ -21,7 +21,7 @@
 header("Content-type:text/html;charset=utf-8");
 // 判断登录状态
 session_start();
-if(isset($_SESSION["huoma.dashboard"])){
+if(isset($_SESSION["session_admin"])){
 
   // 数据库配置
   include '../db_config/db_config.php';
@@ -32,7 +32,7 @@ if(isset($_SESSION["huoma.dashboard"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["huoma.dashboard"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->

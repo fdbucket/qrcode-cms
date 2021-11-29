@@ -64,15 +64,15 @@ $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
   
 // 判断登录状态
 session_start();
-if(isset($_SESSION["huoma.dashboard"])){
+if(isset($_SESSION["session_admin"])){
 
   // 当前登录的用户
-  $lguser= $_SESSION["huoma.dashboard"];
+  $lguser= $_SESSION["session_admin"];
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title"><a href="./">活码管理系统</a></span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["huoma.dashboard"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->

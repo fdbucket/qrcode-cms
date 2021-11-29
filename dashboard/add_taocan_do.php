@@ -5,7 +5,7 @@ header("Content-type:application/json");
 
 // 开启session，判断登陆状态
 session_start();
-if(isset($_SESSION["huoma.dashboard"])){
+if(isset($_SESSION["session_admin"])){
 
 	// 数据库配置
 	include '../db_config/db_config.php';

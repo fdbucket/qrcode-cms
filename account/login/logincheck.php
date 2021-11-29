@@ -52,7 +52,7 @@ if (empty($user)) {
 					'msg' => '登录成功'
 				);
 				session_start();
-				$_SESSION['huoma.user'] = $user;
+				$_SESSION['session_user'] = $user;
 			}else{
 				$result = array(
 					'code' => '103',
