@@ -17,7 +17,7 @@
 <body>
 <!-- 顶部 -->
 <div id="topbar">
-  <span class="admin-title">活码管理系统v6.0.2安装程序</span>
+  <span class="topbar-title">活码管理系统v6.0.2安装程序</span>
 </div>
 
 <?php

@@ -30,8 +30,8 @@ if(isset($_SESSION["huoma.dashboard"])){
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
-  <span class="admin-title"><a href="./">活码管理系统</a></span>
-  <span class="admin-login-link"><a href="./account/exit">'.$_SESSION["huoma.dashboard"].' 退出</a></span>
+  <span class="topbar-title"><a href="./">活码管理系统</a></span>
+  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["huoma.dashboard"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->

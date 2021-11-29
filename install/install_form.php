@@ -24,7 +24,7 @@
 <body>
 <!-- 顶部 -->
 <div id="topbar">
-  <span class="admin-title">活码管理系统安装程序</span>
+  <span class="topbar-title">活码管理系统安装程序</span>
 </div>
 
 <!-- 主体 -->

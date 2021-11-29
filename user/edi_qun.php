@@ -105,8 +105,8 @@ if(isset($_SESSION["huoma.user"])){
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
-  <span class="admin-title"><a href="../">'.$title.'</a></span>
-  <span class="admin-login-link"><a href="../account/exit">'.$_SESSION["huoma.user"].' 退出</a></span>
+  <span class="topbar-title"><a href="../">'.$title.'</a></span>
+  <span class="topbar-login-link"><a href="../account/exit">'.$_SESSION["huoma.user"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
