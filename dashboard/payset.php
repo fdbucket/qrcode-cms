@@ -149,7 +149,7 @@ if(isset($_SESSION["huoma.dashboard"])){
   </form>';
 }else{
   // 跳转到登陆界面
-  header("Location:../LoginReg/Login.html");
+  header("Location:./account/login");
 }
 ?>
 

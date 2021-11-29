@@ -334,7 +334,7 @@ if(isset($_SESSION["huoma.user"])){
 </div>';
 }else{
   // 跳转到登陆界面
-  header("Location:../LoginReg/Login.html");
+  header("Location:../account/login");
 }
 ?>
 

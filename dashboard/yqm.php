@@ -162,7 +162,7 @@ if(isset($_SESSION["huoma.dashboard"])){
 echo '</div>';
 }else{
   // 跳转到登陆界面
-  header("Location:../LoginReg/Login.html");
+  header("Location:./account/login");
 }
 ?>
 

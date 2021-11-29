@@ -1,5 +1,5 @@
 <?php
-include("./common/common.php");
+include("./includes/common.php");
 ?>
 <!DOCTYPE html>
 <html>

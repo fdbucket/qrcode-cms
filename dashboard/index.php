@@ -1,7 +1,7 @@
 <?php
   // 页面字符编码
   header("Content-type:text/html;charset=utf-8");
-  include '../common/common.php';
+  include '../includes/common.php';
   // 数据库配置
   include '../db_config/db_config.php';
 

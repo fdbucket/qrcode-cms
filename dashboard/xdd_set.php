@@ -95,7 +95,7 @@ echo '<!-- 右侧布局 -->
 
 }else{
   // 跳转到登陆界面
-  header("Location:../LoginReg/Login.html");
+  header("Location:./account/login");
 }
 ?>
 
