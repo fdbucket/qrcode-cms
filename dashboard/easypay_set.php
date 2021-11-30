@@ -32,7 +32,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title"><a href="./">活码系统管理后台</a></span>
-  <span class="topbar-login-link"><a href="../account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -75,7 +75,7 @@ if(isset($_SESSION["session_admin"])){
   echo '</div>';
 }else{
   // 跳转到登陆界面
-  header("Location:./account/login");
+  header("Location:login.php");
 }
 ?>
 
@@ -91,7 +91,7 @@ function closesctips(){
 function setpay(){
   $.ajax({
       type: "POST",
-      url: "./pay_select_do.php",
+      url: "../api/admin/pay_select.php",
       data: $('#setpay').serialize(),
       success: function (data) {
         // 设置成功

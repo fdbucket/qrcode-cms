@@ -32,7 +32,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -162,7 +162,7 @@ if(isset($_SESSION["session_admin"])){
 echo '</div>';
 }else{
   // 跳转到登陆界面
-  header("Location:./account/login");
+  header("Location:login.php");
 }
 ?>
 
@@ -276,7 +276,7 @@ function creatstr(){
 function addyqm(){
   $.ajax({
       type: "POST",
-      url: "./creat_yqm_do.php",
+      url: "../api/admin/creat_yqm.php",
       data: $('#addyqm').serialize(),
       success: function (data) {
         if (data.code == 200) {
@@ -302,7 +302,7 @@ function addyqm(){
 function clean_yqm(){
   $.ajax({
       type: "POST",
-      url: "./clean_yqm_do.php",
+      url: "../api/admin/clean_yqm.php",
       success:function(data){
         if (data.code == 200) {
           $("#clean_yqm .modal-body").html("<h2 style='text-align:center;'>"+data.msg+"</h2>");
@@ -326,7 +326,7 @@ function tyyqm(event){
   var this_yqm = event.id;
   $.ajax({
       type: "GET",
-      url: "./ty_yqm_do.php?yqm="+this_yqm,
+      url: "../api/admin/ty_yqm.php?yqm="+this_yqm,
       success: function (data) {
         // 处理成功
         $("#Result").css("display","block");
@@ -350,7 +350,7 @@ function delyqm(event){
   // 执行删除动作
   $.ajax({
       type: "GET",
-      url: "./del_yqm_do.php?yqm="+del_yqm,
+      url: "../api/admin/del_yqm.php?yqm="+del_yqm,
       success: function (data) {
         if (data.code == "100") {
           $("#Result").css("display","block");
@@ -379,7 +379,7 @@ var txt_lunxun = setInterval("upload_txt()",2000);
     clearInterval(txt_lunxun);
     var daoru_txt_form = new FormData(document.getElementById("daoru_yqm"));
     $.ajax({
-      url:"./daoru_yqm.php",
+      url:"../api/admin/daoru.php",
       type:"post",
       data:daoru_txt_form,
       cache: false,

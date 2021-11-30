@@ -32,7 +32,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title"><a href="./">活码系统管理后台</a></span>
-  <span class="topbar-login-link"><a href="../account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -152,7 +152,7 @@ if(isset($_SESSION["session_admin"])){
 </div>';
 }else{
   // 跳转到登陆界面
-  header("Location:./account/login");
+  header("Location:login.php");
 }
 ?>
 
@@ -168,7 +168,7 @@ function closesctips(){
 function addym(){
   $.ajax({
       type: "POST",
-      url: "./add_ym_do.php",
+      url: "../api/admin/add_ym.php",
       data: $('#addym').serialize(),
       success: function (data) {
         // 添加成功
@@ -201,7 +201,7 @@ function delym(event){
   // 执行删除动作
   $.ajax({
       type: "GET",
-      url: "./del_ym_do.php?ymid="+del_ymid,
+      url: "../api/admin/del_ym.php?ymid="+del_ymid,
       success: function (data) {
         if (data.code == "100") {
           $("#Result").css("display","block");

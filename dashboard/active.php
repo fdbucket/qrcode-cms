@@ -32,7 +32,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -202,7 +202,7 @@ if(isset($_SESSION["session_admin"])){
 </div>';
 }else{
   // 跳转到登陆界面
-  header("Location:./account/login");
+  header("Location:login.php");
 }
 ?>
 
@@ -219,7 +219,7 @@ function delactive(event){
   // 执行删除动作
   $.ajax({
       type: "GET",
-      url: "./del_active_do.php?activeid="+del_activeid,
+      url: "../api/admin/del_active.php?activeid="+del_activeid,
       success: function (data) {
         if (data.code == "100") {
           $("#Result").css("display","block");
@@ -247,7 +247,7 @@ function shareactive(event){
   var share_activeid = event.id;
   $.ajax({
       type: "GET",
-      url: "./share_active_do.php?activeid="+share_activeid,
+      url: "../api/admin/share_active.php?activeid="+share_activeid,
       success: function (data) {
         // 分享成功
         $("#share_active .modal-body .link").text("链接："+data.url+"");
@@ -269,7 +269,7 @@ function tyactive(event){
   var ty_activeid = event.id;
   $.ajax({
       type: "GET",
-      url: "./ty_active_do.php?activeid="+ty_activeid,
+      url: "../api/admin/ty_active.php?activeid="+ty_activeid,
       success: function (data) {
         // 停用成功
         $("#Result").css("display","block");

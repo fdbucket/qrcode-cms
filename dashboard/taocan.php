@@ -32,7 +32,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -196,7 +196,7 @@ if(isset($_SESSION["session_admin"])){
 </div>';
 }else{
   // 跳转到登陆界面
-  header("Location:./account/login");
+  header("Location:login.php");
 }
 ?>
 
@@ -212,7 +212,7 @@ function get_taocan_info(event){
   var get_tc_id = event.id;
   $.ajax({
       type: "GET",
-      url: "./get_taocan_info.php?tcid="+get_tc_id,
+      url: "../api/admin/get_taocan_info.php?tcid="+get_tc_id,
       success: function (data) {
         // 获取成功
         if (data.code==100) {
@@ -240,7 +240,7 @@ function get_taocan_info(event){
 function edi_taocan(){
   $.ajax({
       type: "POST",
-      url: "./update_taocan_do.php",
+      url: "../api/admin/update_taocan.php",
       data: $('#edi_taocan_val').serialize(),
       success: function (data) {
         // 更新成功
@@ -272,7 +272,7 @@ function del_taocan(event){
   // 执行删除动作
   $.ajax({
       type: "GET",
-      url: "./del_taocan_do.php?tcid="+del_tcid,
+      url: "../api/admin/del_taocan.php?tcid="+del_tcid,
       success: function (data) {
         if (data.code == "100") {
           $("#Result").css("display","block");
@@ -298,7 +298,7 @@ function del_taocan(event){
 function add_taocan(){
   $.ajax({
       type: "POST",
-      url: "./add_taocan_do.php",
+      url: "../api/admin/add_taocan.php",
       data: $('#taocan_val').serialize(),
       success: function (data) {
         // 添加成功

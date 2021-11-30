@@ -32,7 +32,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -160,7 +160,7 @@ if(isset($_SESSION["session_admin"])){
 echo '</div>';
 }else{
   // 跳转到登陆界面
-  header("Location:./account/login");
+  header("Location:login.php");
 }
 ?>
 
@@ -208,7 +208,7 @@ function delorder(event){
   // 执行删除动作
   $.ajax({
       type: "GET",
-      url: "./del_order_do.php?order_no="+del_order_no,
+      url: "../api/admin/del_order.php?order_no="+del_order_no,
       success: function (data) {
         if (data.code == "100") {
           $("#Result").css("display","block");

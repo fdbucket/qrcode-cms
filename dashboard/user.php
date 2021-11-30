@@ -32,7 +32,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -289,7 +289,7 @@ if(isset($_SESSION["session_admin"])){
 </div>';
 }else{
   // 跳转到登陆界面
-  header("Location:./account/login");
+  header("Location:login.php");
 }
 ?>
 
@@ -305,7 +305,7 @@ function getuserinfo(event){
   var get_user_id = event.id;
   $.ajax({
       type: "GET",
-      url: "./get_user_info.php?userid="+get_user_id,
+      url: "../api/admin/get_user_info.php?userid="+get_user_id,
       data: $('#ediuser').serialize(),
       success: function (data) {
         // 获取成功
@@ -333,7 +333,7 @@ function getuserinfo(event){
 function ediuser(){
   $.ajax({
       type: "POST",
-      url: "./update_user_do.php",
+      url: "../api/admin/update_user.php",
       data: $('#ediuser').serialize(),
       success: function (data) {
         // 更新成功
@@ -365,7 +365,7 @@ function deluser(event){
   // 执行删除动作
   $.ajax({
       type: "GET",
-      url: "./del_user_do.php?userid="+del_userid,
+      url: "../api/admin/del_user.php?userid="+del_userid,
       success: function (data) {
         if (data.code == "100") {
           $("#Result").css("display","block");
@@ -393,7 +393,7 @@ function tyuser(event){
   var ty_userid = event.id;
   $.ajax({
       type: "GET",
-      url: "./ty_user_do.php?userid="+ty_userid,
+      url: "../api/admin/ty_user.php?userid="+ty_userid,
       success: function (data) {
         // 停用成功
         $("#Result").css("display","block");
@@ -421,7 +421,7 @@ function getxufei_userid(event){
 function xufei(){
   $.ajax({
       type: "POST",
-      url: "./xufei_do.php",
+      url: "../api/admin/xufei.php",
       data: $('#xufei_form').serialize(),
       success: function (data) {
         // 更新成功

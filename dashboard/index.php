@@ -91,7 +91,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title"><a href="./">活码管理系统</a></span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -142,7 +142,7 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 }else{
   // 跳转到登陆界面
-  header("Location:../dashboard/account/login/");
+  header("Location:login.php");
 }
 ?>
 
@@ -174,7 +174,7 @@ function delqun(event){
   // 执行删除动作
   $.ajax({
       type: "GET",
-      url: "./del_qun_do.php?hmid="+del_qun_hmid,
+      url: "../api/admin/del_qun.php?hmid="+del_qun_hmid,
       success: function (data) {
         if (data.code == "100") {
           $("#Result").css("display","block");
@@ -201,7 +201,7 @@ function sharequn(event){
   var share_qun_hmid = event.id;
   $.ajax({
       type: "GET",
-      url: "./share_qun_do.php?hmid="+share_qun_hmid,
+      url: "../api/admin/share_qun.php?hmid="+share_qun_hmid,
       success: function (data) {
         // 分享成功
         $("#share_qun .modal-body .link").text("链接："+data.url+"");

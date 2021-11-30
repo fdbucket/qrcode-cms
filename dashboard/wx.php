@@ -31,7 +31,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
   <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="./account/exit">'.$_SESSION["session_admin"].' 退出</a></span>
+  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
 </div>
 
 <!-- 操作区 -->
@@ -196,7 +196,7 @@ if(isset($_SESSION["session_admin"])){
   </div>';
 }else{
   // 跳转到登陆界面
-  header("Location:./account/login");
+  header("Location:login.php");
 }
 ?>
 
@@ -213,7 +213,7 @@ function delwx(event){
   // 执行删除动作
   $.ajax({
       type: "GET",
-      url: "./del_wx_do.php?wxid="+del_wxid,
+      url: "../api/admin/del_wx.php?wxid="+del_wxid,
       success: function (data) {
         if (data.code == "100") {
           $("#Result").css("display","block");
@@ -241,7 +241,7 @@ function sharewx(event){
   var share_wxid = event.id;
   $.ajax({
       type: "GET",
-      url: "./share_wx_do.php?wxid="+share_wxid,
+      url: "../api/admin/share_wx.php?wxid="+share_wxid,
       success: function (data) {
         // 分享成功
         $("#share_wx .modal-body .link").text("链接："+data.url+"");
@@ -264,7 +264,7 @@ function tywx(event){
   var ty_wxid = event.id;
   $.ajax({
       type: "GET",
-      url: "./ty_wx_do.php?wxid="+ty_wxid,
+      url: "../api/admin/ty_wx.php?wxid="+ty_wxid,
       success: function (data) {
         // 停用成功
         $("#Result").css("display","block");
