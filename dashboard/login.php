@@ -35,7 +35,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">密码</span>
           </div>
-          <input type="text" class="form-control" placeholder="请输入密码" name="pwd">
+          <input type="password" class="form-control" placeholder="请输入密码" name="pwd">
         </div>
         <!-- 登陆按钮 -->
         <button type="submit" class="btn btn-dark" style="width: 100%;" onclick="logincheck();">登陆</button>

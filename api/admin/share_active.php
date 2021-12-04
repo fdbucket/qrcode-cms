@@ -25,8 +25,9 @@ if (isset($_SESSION["session_admin"])) {
             while ($row_yuming = $result_yuming->fetch_assoc()) {
                 $active_yuming = $row_yuming["active_yuming"];
                 // 生成网址
-                $SERVER = $active_yuming . $_SERVER["REQUEST_URI"];
-                $url = dirname(dirname($SERVER)) . "/get/active/?activeid=" . $active_id;
+                // $SERVER = $active_yuming . $_SERVER["REQUEST_URI"];
+                // $url = dirname(dirname($SERVER)) . "/get/active/?activeid=" . $active_id;
+                $url = $active_yuming . "/get/active/?activeid=" . $active_id;
                 $result = array(
                     "code" => "100",
                     "msg" => "分享成功",

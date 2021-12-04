@@ -172,7 +172,7 @@
                         mysqli_query($conn, "UPDATE qrcode_qunsub SET fwl=fwl+1 WHERE zmid='$zmid'");
 
                         // 将子码缓存到本地
-                        if ($_COOKIE[$qun_hmid] == null) {
+                        if (!isset($_COOKIE[$qun_hmid]) || $_COOKIE[$qun_hmid] == null) {
                             $expire_zima = time() + 60 * 60 * 24 * 30;
                             setcookie($qun_hmid, $qrcodeUrl, $expire_zima);
                         }

@@ -53,8 +53,6 @@
 <div id="Result" style="display: none;"></div>
 
 <?php
-// 页面字符编码
-header("Content-type:text/html;charset=utf-8");
 // 判断登录状态
 session_start();
 if(isset($_SESSION["session_admin"])){
@@ -104,15 +102,15 @@ if(isset($_SESSION["session_admin"])){
   <!-- 电脑端横排列表 -->
   <div class="left-nav">
     <a href="index.php" class="btn btn-dark">数据看板</a>
-    <a href="./qun.php" class="btn btn-light">微信群活码</a>
-    <a href="./wx.php" class="btn btn-light">客服活码</a>
-    <a href="./active.php" class="btn btn-light">活动码</a>
-    <a href="./user.php" class="btn btn-light">用户管理</a>
-    <a href="./order.php" class="btn btn-light">订单管理</a>
-    <a href="./taocan.php" class="btn btn-light">续费套餐</a>
-    <a href="./yqm.php" class="btn btn-light">邀请码</a>
-    <a href="./addons.php" class="btn btn-light">插件中心</a>
-    <a href="./set.php" class="btn btn-light">系统设置</a>
+    <a href="qun.php" class="btn btn-light">微信群活码</a>
+    <a href="wx.php" class="btn btn-light">客服活码</a>
+    <a href="active.php" class="btn btn-light">活动码</a>
+    <a href="user.php" class="btn btn-light">用户管理</a>
+    <a href="order.php" class="btn btn-light">订单管理</a>
+    <a href="taocan.php" class="btn btn-light">续费套餐</a>
+    <a href="yqm.php" class="btn btn-light">邀请码</a>
+    <a href="addons.php" class="btn btn-light">插件中心</a>
+    <a href="set.php" class="btn btn-light">系统设置</a>
   </div>';
 
   echo '<!-- 右侧布局 -->
@@ -136,9 +134,8 @@ if(isset($_SESSION["session_admin"])){
         <div class="num"><h3>¥'.$pay_nums.'</h3></div>
       </div>
     </div>
-    <p style="color:#999;font-size:13px;line-height:5px;"><a href="' . $support_url . '" style="text-decoration:none;color:#999;" target="blank">用户反馈：' . $support_url . '</a></p>
-    <p style="color:#999;font-size:13px;line-height:5px;"><a href="' . $github_url . '" style="text-decoration:none;color:#999;" target="blank">Github开源地址：' . $github_url . '</a></p>
-    <p style="color:#999;font-size:13px;line-height:5px;"><a href="../install/qun_qrcode.png" style="text-decoration:none;color:#999;" target="blank">加入开发者交流群：点击这里，微信扫码进群</a></p>
+    <p><a href="' . $support_url . '" target="_blank">用户反馈：' . $support_url . '</a></p>
+    <p><a href="' . $github_url . '" target="_blank">Github开源地址：' . $github_url . '</a></p>
   </div>';
 }else{
   // 跳转到登陆界面

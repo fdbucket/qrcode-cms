@@ -9,9 +9,6 @@ include("./includes/common.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $site_title;?></title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
     <meta name="keywords" content="<?php echo $site_keywords;?>">
     <meta name="description" content="<?php echo $site_description;?>">
@@ -22,46 +19,39 @@ include("./includes/common.php");
     <nav class="navbar navbar-expand-sm bg-light navbar-dark">
         <!-- Brand/logo -->
         <a class="navbar-brand" href=".">
-            <img src="./assets/images/logo.png" alt="logo" style="width:130px;">
+            <img src="./assets/images/logo.png" alt="logo" style="width:100px;">
         </a>
 
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="link" target="blank"
-                    href="https://mp.weixin.qq.com/s?__biz=MzU2NzIyMzA1Mw==&mid=100000294&idx=1&sn=c9d3c58983319c6547cc73abeccdbe35&chksm=7ca134444bd6bd52ae168fb1fc06c405be6db6ce0b5d4c49f7882145c0f923ff8fe2ad7388e0#rd">安装教程</a>
+                <a class="link" href=".">活码价格</a>
             </li>
             <li class="nav-item">
-                <a class="link" target="blank" href="<?php echo $github_url;?>">Github</a>
+                <a class="link" href=".">开发文档</a>
             </li>
             <li class="nav-item">
-                <a class="link" target="blank" href="javascript:alert('正在更新中...')">开发文档</a>
-            </li>
-            <li class="nav-item">
-                <a class="link" target="blank" href="https://segmentfault.com/u/tanking">作者博客</a>
+                <a class="link" target="_blank" href="https://croidc.com/">程江云</a>
             </li>
         </ul>
 
         <!-- button -->
-        <a href="javascript:alert('暂无插件')" class="cj">插件</a>
-        <button class="btn btn-primary" style="position: absolute;right: 100px;"><a
-                href="<?php echo $github_url;?>" target="blank">免费下载源码</a></button>
+        <a href="./user/" class="cj">获取注册码</a>
+        <a href="./user/" class="btn btn-primary" style="position: absolute;right: 100px;">立即使用</a>
     </nav>
 
     <div class="jumbotron">
         <div class="middle">
             <div class="left">
                 <div class="bigtitle">微信私域流量运营数据增长神器</div>
-                <div class="miaoshu">全面升级6.0.1，多渠道引流获客，精细化高效社群数据增长，让管理和营销更简单！让获取数据更简单！</div>
+                <div class="miaoshu">全面升级，多渠道引流获客，精细化高效社群数据增长，让管理和营销更简单！让获取数据更简单！</div>
                 <div class="download">
-                    <a href="">
+                    <a href="./user/">
                         <div class="dlbtn">
                             <div class="dltext">
-                                <a href="<?php echo $github_url;?>" target="blank">
-                                    <div class="text">免费下载源码</div>
-                                </a>
+                                <div class="text">立即使用</div>
                                 <div class="icon">
-                                    <img src="./assets/images/download.png">
+                                    <img src="./assets/images/go.png">
                                 </div>
                             </div>
                         </div>
@@ -114,7 +104,7 @@ include("./includes/common.php");
             </div>
             <div class="right">
                 <div class="top">实用插件</div>
-                <div class="bottom">各类实用插件，让系统更高级，辅助各类活动高效进行。</div>
+                <div class="bottom">各类实用插件，让系统更高级，辅助各类活动高效进行</div>
             </div>
         </div>
     </div>
@@ -130,9 +120,9 @@ include("./includes/common.php");
         </div>
         <div class="right1">
             <div class="title">响应式操作面板</div>
-            <div class="desc">手机、电脑、平板均可操作，自适应设备，随时随地管理活码系统。</div>
+            <div class="desc">手机、电脑、平板均可操作，自适应设备，随时随地管理活码系统</div>
             <div class="dlbtn">
-                <a href="<?php echo $github_url;?>">免费下载</a>
+                <a href="./user/">立即使用</a>
             </div>
         </div>
     </div>
@@ -146,10 +136,10 @@ include("./includes/common.php");
         <div class="left2">
             <div class="title">多种推广方式</div>
             <div class="desc">
-                <p style="width: 300px;float: right;">群活码、客服微信、活动页面，多种推广方式，助力活动数据增长。</p>
+                <p style="width: 300px;float: right;">群活码、客服微信、活动页面，多种推广方式，助力活动数据增长</p>
             </div>
             <div class="dlbtn">
-                <a href="<?php echo $github_url;?>">免费下载</a>
+                <a href="./user/">立即使用</a>
             </div>
         </div>
         <div class="right2">
@@ -159,18 +149,18 @@ include("./includes/common.php");
 
     <br />
     <br />
-    <h2 style="text-align: center;font-weight: bold;">超级管理员</h2 style="text-align: center;">
-    <p style="text-align: center;color: #666;">对用户数据进行管理，对用户账号，权限进行操作</p>
+    <h2 style="text-align: center;font-weight: bold;">微信群快速裂变</h2 style="text-align: center;">
+    <p style="text-align: center;color: #666;">告别7天失效及200人扫码难题，群二维码随时更新、智能切换，每200人自动换群，所有人都可通过扫码快速进群</p>
     <br />
     <div class="pageint">
         <div class="left1">
             <img src="./assets/images/3.png">
         </div>
         <div class="right1">
-            <div class="title">超级管理员</div>
-            <div class="desc">管理用户发布的活码，及时处理违法违规活码、监控数据、切换域名、查看订单等。</div>
+            <div class="title">个人号有效分流</div>
+            <div class="desc">个人号引流只需一个客服码，被加好友达指定人数自动更换二维码，多个微信号有效分流，不受每天被动加人数量限制</div>
             <div class="dlbtn">
-                <a href="<?php echo $github_url;?>">免费下载</a>
+                <a href="./user/">立即使用</a>
             </div>
         </div>
     </div>
@@ -182,12 +172,12 @@ include("./includes/common.php");
     <br />
     <div class="pageint">
         <div class="left2">
-            <div class="title">各种实用插件</div>
+            <div class="title">防止重复进群/加好友</div>
             <div class="desc">
-                <p style="width: 300px;float: right;">支持插件定制，根据个人运营需要开发各类实用插件，助力推广，更高效完成营销活动。</p>
+                <p style="width: 300px;float: right;">支持自动识别重复扫码用户，有效屏蔽重复进群或加好友的人员，提升管理效率</p>
             </div>
             <div class="dlbtn">
-                <a href="<?php echo $github_url;?>">免费下载</a>
+                <a href="./user/">立即使用</a>
             </div>
         </div>
         <div class="right2">
@@ -197,39 +187,31 @@ include("./includes/common.php");
 
     <br />
     <br />
-    <h2 style="text-align: center;font-weight: bold;">免费开源，支持二次开发</h2 style="text-align: center;">
-    <p style="text-align: center;color: #666;">本套源码免费开源，任意二次开发，不受限制</p>
+    <h2 style="text-align: center;font-weight: bold;">精准数据统计，推广效果分析</h2 style="text-align: center;">
+    <p style="text-align: center;color: #666;">详细统计用户扫码次数、区域分布、流失数，用户扫码趋势和时 段分析，实时掌握推广效果</p>
     <br />
     <div class="pageint">
         <div class="left1">
             <img src="./assets/images/5.png">
         </div>
         <div class="right1">
-            <div class="title">GitHub·源码开源</div>
-            <div class="desc">本套活码系统免费开源，GitHub长期维护，任意修改，可商业化上线运营。</div>
+            <div class="title">突破扫码限制，微群快速引流</div>
+            <div class="desc">群活码，解决超过100人无法扫码入群与群码7天失效难题！支持 微信和企业微信群码，多码自动切换、随时修改，对外宣传入口 二维码不变</div>
             <div class="dlbtn">
-                <a href="<?php echo $github_url;?>">免费下载</a>
+                <a href="./user/">立即使用</a>
             </div>
         </div>
     </div>
-    <br />
-    <h3 style="text-align: center;color: #eee;"><?php echo $site_title;?></h3>
-    <!-- <div class="footer">
-        <div class="left">
-            <div class="top">
-                <p>版权所有：活码管理系统</p>
-                <p>备案信息：粤ICP备16088839号-1</p>
-            </div>
-            <div class="bottom">
-                <p>xxx</p>
-            </div>
-        </div>
-        <div class="right">
-            <div class="zuo"></div>
-            <div class="zhong"></div>
-            <div class="you"></div>
-        </div>
-    </div> -->
+
+    <div class="footer text-center">
+        <p>Copyright &copy;<?php echo date("Y") ?> <?php echo $site_name; ?> All Rights Reserved.</p>
+        <p>程江旗下：<a href="https://croidc.com/" target="_blank">程江云</a></p>
+        <p><a href="https://beian.miit.gov.cn" target="_blank"><?php echo $icp_number; ?></a></p>
+    </div>
+
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

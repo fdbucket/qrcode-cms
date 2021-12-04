@@ -8,7 +8,8 @@ define('PLUGIN_ROOT', ROOT . 'addons/');
 date_default_timezone_set('Asia/Shanghai');
 $date = date("Y-m-d H:i:s");
 
-$site_title = '活码管理系统 - 微信私域流量运营数据增长神器';
+$site_name = '活码管理系统'; // 网站名称
+$site_title = '活码管理系统 - 微信私域流量运营数据增长神器'; // SEO网页标题
 $site_url = ($_SERVER['SERVER_PORT'] == '443' ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'];
 
 $site_keywords = '引流宝,活码管理系统,活码系统,微信活码,微信群活码,群活码系统,免费活码系统,二维码活码';
@@ -16,3 +17,4 @@ $site_description = '这是一套开源、免费、可上线运营的活码系�
 
 $github_url = 'https://github.com/fdbucket/qrcode-cms';
 $support_url = 'https://support.qq.com/products/345003';
+$icp_number = '沪ICP备20016252号-10';

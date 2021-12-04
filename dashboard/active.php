@@ -136,9 +136,9 @@ if(isset($_SESSION["session_admin"])){
               <div class="dropdown-menu">
               <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#share_active" id="'.$active_id.'" onclick="shareactive(this);">查看</a>';
               if ($active_status == 3) {
-                echo '<a class="dropdown-item" id="'.$active_id.'" onclick="tyactive(this);">启用</a>';
+                echo '<a class="dropdown-item" href="javascript:;" id="'.$active_id.'" onclick="tyactive(this);">启用</a>';
               }else{
-                echo '<a class="dropdown-item" id="'.$active_id.'" onclick="tyactive(this);">停用</a>';
+                echo '<a class="dropdown-item" href="javascript:;" id="'.$active_id.'" onclick="tyactive(this);">停用</a>';
               }
               echo '<a class="dropdown-item" href="javascript:;" id="'.$active_id.'" onclick="delactive(this);" title="点击后马上就删除的哦！">删除</a>
               </div>

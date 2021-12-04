@@ -368,62 +368,13 @@ body {
 
 .footer {
     width: 100%;
-    height: 200px;
     background: #f6f5fe;
     margin-top: 50px;
-}
-
-.footer .left {
-    width: 40%;
-    height: 200px;
-    /*background: #ccc;*/
-    float: left;
-}
-
-.footer .left .top {
-    width: 100%;
-    height: 80px;
-    overflow: hidden;
-}
-
-.footer .left .top p {
-    text-align: right;
-    line-height: 10px;
-    margin-top: 20px;
+    padding: 30px 0;
     color: #666;
     font-size: 14px;
 }
 
-.footer .left .bottom {
-    width: 100%;
-    height: 120px;
-    background: green;
-}
-
-.footer .right {
-    width: 60%;
-    height: 200px;
-    background: #ddd;
-    float: right;
-}
-
-.footer .right .zuo {
-    width: 30%;
-    height: 200px;
-    background: blue;
-    float: left;
-}
-
-.footer .right .zhong {
-    width: 20%;
-    height: 200px;
-    background: pink;
-    float: left;
-}
-
-.footer .right .you {
-    width: 50%;
-    height: 200px;
-    background: yellow;
-    float: left;
+.footer a {
+    color: #666;
 }
