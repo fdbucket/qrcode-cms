@@ -23,7 +23,7 @@
     header("Content-type:text/html;charset=utf-8");
 
     // 获取参数
-    $qun_hmid = $_GET["hmid"];
+    $qun_hmid = addslashes(str_replace("_", "\_", $_GET["hmid"]));
 
     // 验证是否有参数
     if (trim(empty($qun_hmid))) {

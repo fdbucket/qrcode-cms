@@ -19,13 +19,13 @@
       $favicon = $row_set['favicon'];
     }
     if ($title == null || empty($title) || $title == '') {
-        $title = "活码管理系统";
+        $title = "二维码管理系统";
         $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
         $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
         $favicon = "../assets/images/favicon.png";
     }
   }else{
-    $title = "活码管理系统";
+    $title = "二维码管理系统";
     $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
     $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
     $favicon = "../assets/images/favicon.png";
@@ -37,10 +37,10 @@
   <title>编辑活动 - <?php echo $title; ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
   <script src="../assets/js/wangEditor.min.js"></script>
@@ -79,8 +79,10 @@ if(isset($_SESSION["session_user"])){
       // 渲染数据到UI
       echo '<!-- 顶部导航栏 -->
       <div id="topbar">
-        <span class="topbar-title"><a href="./">'.$title.'</a></span>
-        <span class="topbar-login-link"><a href="../account/exit">'.$_SESSION["session_user"].' 退出</a></span>
+        <div class="container">
+          <span class="topbar-title"><a href="./">'.$title.'</a></span>
+          <span class="topbar-login-link">'.$_SESSION["session_user"].'<a href="logout.php">退出</a></span>
+        </div>
       </div>
 
       <!-- 操作区 -->
@@ -93,7 +95,7 @@ if(isset($_SESSION["session_user"])){
         <!-- 电脑端横排列表 -->
         <div class="left-nav">
           <button type="button" class="btn btn-zdy">编辑活动</button>
-          <button type="button" class="btn btn-zdylight"><a href="./active.php?home/ediactive&lang=zh_CN&token='.md5(uniqid()).'">返回上一页</a></button>
+          <button type="button" class="btn btn-zdylight"><a href="./active.php?home/ediactive">返回上一页</a></button>
           <button type="button" class="btn btn-zdylight"><a href="./">返回首页</a></button>
         </div>
 

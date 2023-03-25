@@ -9,30 +9,31 @@
   background: #333;
 }
 
-#topbar a{
-  text-decoration: none;
+#topbar a {
+    text-decoration: none;
     color: #fff;
-    display: block;
+    display: inline-block;
 }
 
-#topbar .topbar-title{
+#topbar .topbar-title {
   display: block;
   height: 50px;
   float: left;
   line-height: 50px;
-  text-indent: 15px;
   font-size: 18px;
   color: #fff;
 }
 
-#topbar .topbar-login-link{
+#topbar .topbar-login-link {
   display: block;
   height: 50px;
   float: right;
   line-height: 50px;
-  margin-right: 20px;
   font-size: 16px;
   color: #fff;
+}
+#topbar .topbar-login-link a {
+  margin-left: 10px;
 }
 
 .radio{
@@ -109,7 +110,6 @@
   .container .left-nav .btn{
     width: 100%;
     margin-bottom:5px;
-    height: 45px;
   }
 
   .container .left-nav .btn a{

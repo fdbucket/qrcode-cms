@@ -22,7 +22,7 @@ if(empty($ffjq_id)){
 
 			// 生成落地链接
 			$SERVER = $ffjq_ldym.$_SERVER["REQUEST_URI"];
-			$ldurl = dirname(dirname($SERVER))."/ffq.php?ffqid=".$ffjq_id."&token=".md5($ffjq_id)."&lang=zh_CN&charset=utf-8";
+			$ldurl = dirname(dirname($SERVER))."/ffq.php?ffqid=".$ffjq_id."&charset=utf-8";
 			// echo $ldurl;
 			// 跳转到落地页
 			header('Location:'.$ldurl);

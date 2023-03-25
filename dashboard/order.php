@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>活码管理系统</title>
+  <title>二维码管理系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
   <script src="../assets/js/wangEditor.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
 </head>
@@ -30,15 +30,22 @@ if(isset($_SESSION["session_admin"])){
   $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
   echo '<!-- 顶部导航栏 -->
-<div id="topbar">
-  <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
-</div>
+  <div id="topbar">
+    <div class="container">
+      <span class="topbar-title"><a href="./">二维码管理系统后台</a></span>
+      <span class="topbar-login-link">'.$_SESSION["session_admin"].'<a href="logout.php">退出</a></span>
+    </div>
+  </div>
 
 <!-- 操作区 -->
 <div class="container">
   <br/>
-  <h3>活码管理后台 / 订单管理</h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="./">二维码管理系统</a></li>
+      <li class="breadcrumb-item active" aria-current="page">订单管理</li>
+    </ol>
+  </nav>
   <p>查看用户注册、续费的订单</p>
   
   <!-- 左右布局 -->
@@ -166,7 +173,7 @@ echo '</div>';
 
 <!-- 搜索订单 -->
 <div class="modal fade" id="search_order">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
  
       <!-- 模态框头部 -->

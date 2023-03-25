@@ -1,100 +1,107 @@
 <?php
-  // 页面字符编码
-  header("Content-type:text/html;charset=utf-8");
+// 页面字符编码
+header("Content-type:text/html;charset=utf-8");
 
-  // 数据库配置
-  include '../db_config/db_config.php';
+// 判断登录状态
+session_start();
+if (!isset($_SESSION["session_user"])) {
+    // 跳转到登陆界面
+    header("Location:./login.php");
+    exit();
+}
+// 数据库配置
+include '../db_config/db_config.php';
 
-  // 创建连接
-  $conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
+// 创建连接
+$conn = new mysqli($db_url, $db_user, $db_pwd, $db_name);
 
-  // 获取设置项
-  $sql_set = "SELECT * FROM qrcode_settings";
-  $result_set = $conn->query($sql_set);
-  if ($result_set->num_rows > 0) {
-    while($row_set = $result_set->fetch_assoc()) {
-      $title = $row_set['title'];
-      $keywords = $row_set['keywords'];
-      $description = $row_set['description'];
-      $favicon = $row_set['favicon'];
+// 获取设置项
+$sql_set = "SELECT * FROM qrcode_settings";
+$result_set = $conn->query($sql_set);
+if ($result_set->num_rows > 0) {
+    while ($row_set = $result_set->fetch_assoc()) {
+        $title = $row_set['title'];
+        $keywords = $row_set['keywords'];
+        $description = $row_set['description'];
+        $favicon = $row_set['favicon'];
     }
     if ($title == null || empty($title) || $title == '') {
-        $title = "活码管理系统";
+        $title = "二维码管理系统";
         $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
         $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
         $favicon = "../assets/images/favicon.png";
     }
-  }else{
-    $title = "活码管理系统";
+} else {
+    $title = "二维码管理系统";
     $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
     $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
     $favicon = "../assets/images/favicon.png";
-  }
+}
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>个人中心 - <?php echo $title; ?></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../assets/js/Pay.Class.js?token=<?php echo md5(time()); ?>"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
-  <meta name="keywords" content="<?php echo $keywords; ?>">
-  <meta name="description" content="<?php echo $description; ?>">
-  <link rel="icon" href="<?php echo $favicon; ?>" type="image/x-icon" />
+    <title>个人中心 - <?php echo $title; ?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/Pay.Class.js?token=<?php echo md5(time()); ?>"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
+    <meta name="keywords" content="<?php echo $keywords; ?>">
+    <meta name="description" content="<?php echo $description; ?>">
+    <link rel="icon" href="<?php echo $favicon; ?>" type="image/x-icon" />
 </head>
+
 <body>
 
-<!-- 全局信息提示框 -->
-<div id="Result" style="display: none;"></div>
+    <!-- 全局信息提示框 -->
+    <div id="Result" style="display: none;"></div>
 
-<?php
-// 判断登录状态
-session_start();
-if(isset($_SESSION["session_user"])){
+    <!-- 顶部导航栏 -->
+    <div id="topbar">
+        <div class="container">
+            <span class="topbar-title"><?php echo $title; ?></span>
+            <span class="topbar-login-link"><?php echo $_SESSION["session_user"]; ?><a href="logout.php">退出</a></span>
+        </div>
+    </div>
 
-  echo '<!-- 顶部导航栏 -->
-<div id="topbar">
-  <span class="topbar-title">'.$title.'</span>
-  <span class="topbar-login-link"><a href="../account/exit">'.$_SESSION["session_user"].' 退出</a></span>
-</div>
+    <!-- 操作区 -->
+    <div class="container">
+        <br />
+        <h3>个人中心</h3>
+        <p>查看、编辑你的个人账号信息，续费管理等</p>
 
-<!-- 操作区 -->
-<div class="container">
-  <br/>
-  <h3>个人中心</h3>
-  <p>查看、编辑你的个人账号信息，续费管理等</p>
-  
-  <!-- 左右布局 -->
-  <!-- 左侧布局 -->
-  <div class="left-nav">
-    <button type="button" class="btn btn-zdy">账号管理</button>
-    <a href="./"><button type="button" class="btn btn-zdylight">返回首页</button></a>
-  </div>';
+        <!-- 左右布局 -->
+        <!-- 左侧布局 -->
+        <div class="left-nav">
+            <button type="button" class="btn btn-zdy">账号管理</button>
+            <a href="./"><button type="button" class="btn btn-zdylight">返回首页</button></a>
+        </div>
 
-  // 获取账号信息
-  $sql = "SELECT * FROM qrcode_user WHERE user ='".$_SESSION["session_user"]."'";
-  $result = $conn->query($sql);
+        <?php
+        // 获取账号信息
+        $sql = "SELECT * FROM qrcode_user WHERE user ='" . $_SESSION["session_user"] . "'";
+        $result = $conn->query($sql);
 
-  // 获取套餐列表
-  $sql_tc = "SELECT * FROM qrcode_package";
-  $result_tc = $conn->query($sql_tc);
+        // 获取套餐列表
+        $sql_tc = "SELECT * FROM qrcode_package";
+        $result_tc = $conn->query($sql_tc);
 
-  // 获取微信支付API
-  $sql_wxpay = "SELECT * FROM qrcode_payment WHERE paytype='wx' AND payselect='2'";
-  $result_wxpay = $conn->query($sql_wxpay);
+        // 获取微信支付API
+        $sql_wxpay = "SELECT * FROM qrcode_payment WHERE paytype='wx' AND payselect='2'";
+        $result_wxpay = $conn->query($sql_wxpay);
 
-  // 获取支付宝API
-  $sql_alipay = "SELECT * FROM qrcode_payment WHERE paytype='ali' AND payselect='2'";
-  $result_alipay = $conn->query($sql_alipay);
-  
-  if ($result->num_rows > 0) {
-      echo '<!-- 右侧布局 -->
+        // 获取支付宝API
+        $sql_alipay = "SELECT * FROM qrcode_payment WHERE paytype='ali' AND payselect='2'";
+        $result_alipay = $conn->query($sql_alipay);
+
+        if ($result->num_rows > 0) {
+            echo '<!-- 右侧布局 -->
       <div class="right-nav">
         <table class="table">
           <thead>
@@ -108,37 +115,36 @@ if(isset($_SESSION["session_user"])){
           </thead>
           <tbody>';
 
-          // 遍历数据
-          while($row = $result->fetch_assoc()) {
-            $user = $row["user"];
-            $reg_time = $row["reg_time"];
-            $expire_time = $row["expire_time"];
-            $user_status = $row["user_status"];
-            $email = $row["email"];
-            $user_id = $row["user_id"];
-            $pwd = $row["pwd"];
+            // 遍历数据
+            while ($row = $result->fetch_assoc()) {
+                $user = $row["user"];
+                $reg_time = $row["reg_time"];
+                $expire_time = $row["expire_time"];
+                $user_status = $row["user_status"];
+                $email = $row["email"];
+                $user_id = $row["user_id"];
+                $pwd = $row["pwd"];
 
-            // 渲染到UI
-            echo '<tr>';
-              echo '<td class="td-title" style="width:150px;">'.$user.'</td>
-              <td class="td-status">'.$user_id.'</td>
-              <td class="td-status">'.$reg_time.'</td>
-              <td class="td-fwl">'.$expire_time.'</td>';
-              echo '<td class="td-caozuo" style="text-align: center;">
+                // 渲染到UI
+                echo '<tr>';
+                echo '<td class="td-title" style="width:150px;">' . $user . '</td>
+              <td class="td-status">' . $user_id . '</td>
+              <td class="td-status">' . $reg_time . '</td>
+              <td class="td-fwl">' . $expire_time . '</td>';
+                echo '<td class="td-caozuo" style="text-align: center;">
               <a href="javascript:;" data-toggle="modal" class="update_user_btn" data-target="#ediuser_modal">修改</a>
               <a href="javascript:;" data-toggle="modal" class="update_user_btn" data-target="#xufei_modal">续费</a>
               </td>';
-            echo '</tr>';
-          }
-          echo '</div></tbody></table>';
+                echo '</tr>';
+            }
+            echo '</div></tbody></table>';
+        } else {
+            echo '<div class="right-nav">暂无账号</div>';
+        }
 
-  }else{
-    echo '<div class="right-nav">暂无账号</div>';
-  }
-
-  echo '<!-- 编辑账号信息 -->
+        echo '<!-- 编辑账号信息 -->
   <div class="modal fade" id="ediuser_modal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
    
         <!-- 模态框头部 -->
@@ -155,18 +161,18 @@ if(isset($_SESSION["session_user"])){
             <div class="input-group-prepend">
               <span class="input-group-text">新邮箱</span>
             </div>
-            <input type="email" class="form-control" value="'.$email.'" placeholder="请输入新邮箱" name="new_email">
+            <input type="email" class="form-control" value="' . $email . '" placeholder="请输入新邮箱" name="new_email">
           </div>
           
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text">新密码</span>
             </div>
-            <input type="text" class="form-control" value="'.$pwd.'" placeholder="请输入新密码" name="new_pwd">
+            <input type="text" class="form-control" value="' . $pwd . '" placeholder="请输入新密码" name="new_pwd">
           </div>
 
-          <input type="hidden" value="'.$user_id.'" name="user_id"/>
-          <input type="hidden" value="'.$pwd.'" name="old_pwd"/>
+          <input type="hidden" value="' . $user_id . '" name="user_id"/>
+          <input type="hidden" value="' . $pwd . '" name="old_pwd"/>
 
         </div>
    
@@ -182,7 +188,7 @@ if(isset($_SESSION["session_user"])){
   
   <!-- 续费 -->
   <div class="modal fade" id="xufei_modal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
    
         <!-- 模态框头部 -->
@@ -206,8 +212,8 @@ if(isset($_SESSION["session_user"])){
               <span class="input-group-text">邀请码</span>
             </div>
             <input type="text" class="form-control" placeholder="请粘贴邀请码" name="yqmstr">
-            <input type="hidden" class="form-control" name="userid" value="'.$user_id.'">
-            <input type="hidden" class="form-control" name="expire_time" value="'.$expire_time.'">
+            <input type="hidden" class="form-control" name="userid" value="' . $user_id . '">
+            <input type="hidden" class="form-control" name="expire_time" value="' . $expire_time . '">
           </div>
           <button class="btn btn-secondary" onclick="yqm_xufei();">续费</button>
           </span>
@@ -215,30 +221,29 @@ if(isset($_SESSION["session_user"])){
           <span id="onlinepay" style="display:none;">
           <select class="form-control" name="taocan" id="select_taocan" style="-webkit-appearance:none;">
             <option value="">请选择续费的套餐↓↓↓</option>';
-            if ($result_tc->num_rows > 0) {
-              while($row_tc = $result_tc->fetch_assoc()) {
+        if ($result_tc->num_rows > 0) {
+            while ($row_tc = $result_tc->fetch_assoc()) {
                 $tc_days = $row_tc["tc_days"];
                 $tc_price = $row_tc["tc_price"];
                 $tc_title = $row_tc["tc_title"];
-                echo '<option value="'.$tc_days.'-'.$tc_price.'">'.$tc_title.'（续期'.$tc_days.'天，'.$tc_price.'元）</option>';
-              }
-            }else{
-              echo '<option value="">暂无套餐</option>';
+                echo '<option value="' . $tc_days . '-' . $tc_price . '">' . $tc_title . '（续期' . $tc_days . '天，' . $tc_price . '元）</option>';
             }
-          echo '</select>';
+        } else {
+            echo '<option value="">暂无套餐</option>';
+        }
+        echo '</select>';
 
-          echo '<input type="hidden" value="'.$user_id.'" name="user_id" id="user_id"/>
-          <br/>
+        echo '<input type="hidden" value="' . $user_id . '" name="user_id" id="user_id"/>
           <div class="paybtn">';
-          while($row_wxpay = $result_wxpay->fetch_assoc()) {
+        while ($row_wxpay = $result_wxpay->fetch_assoc()) {
             $payapi = $row_wxpay["payapi"];
-            echo '<button type="button" class="btn btn-tjzdy" style="background:#07c160;border:1px solid #07c160;" onclick="'.$payapi.'();">微信支付</button> ';
-          }
-          while($row_alipay = $result_alipay->fetch_assoc()) {
+            echo '<button type="button" class="btn btn-tjzdy" style="background:#07c160;border:1px solid #07c160;" onclick="' . $payapi . '();">微信支付</button> ';
+        }
+        while ($row_alipay = $result_alipay->fetch_assoc()) {
             $payapi = $row_alipay["payapi"];
-            echo '<button type="button" class="btn btn-dark" style="background:#1677ff;border:1px solid #1677ff;" onclick="'.$payapi.'();">支付宝</button>';
-          }
-          echo '</div>
+            echo '<button type="button" class="btn btn-dark" style="background:#1677ff;border:1px solid #1677ff;" onclick="' . $payapi . '();">支付宝</button>';
+        }
+        echo '</div>
           </form>
           
           <!-- 展示支付二维码 -->
@@ -262,27 +267,24 @@ if(isset($_SESSION["session_user"])){
   </div>
 
 </div>';
-}else{
-  // 跳转到登陆界面
-  header("Location:../account/login/");
-}
+
 ?>
 
-<script type="text/javascript">
-
-// 监听选项
-$("#xufei_type").bind('input propertychange',function(e){
-  // 获取当前点击的选项
-  var xufei_type = $(this).val();
-  // 1代表邀请码，2代表在线支付
-  if (xufei_type == 1) {
-    $("#yaoqingma").css("display","block");
-    $("#onlinepay").css("display","none");
-  }else if (xufei_type == 2) {
-    $("#yaoqingma").css("display","none");
-    $("#onlinepay").css("display","block");
-  }
-})
-</script>
+    <script type="text/javascript">
+        // 监听选项
+        $("#xufei_type").bind('input propertychange', function(e) {
+            // 获取当前点击的选项
+            var xufei_type = $(this).val();
+            // 1代表邀请码，2代表在线支付
+            if (xufei_type == 1) {
+                $("#yaoqingma").css("display", "block");
+                $("#onlinepay").css("display", "none");
+            } else if (xufei_type == 2) {
+                $("#yaoqingma").css("display", "none");
+                $("#onlinepay").css("display", "block");
+            }
+        })
+    </script>
 </body>
+
 </html>

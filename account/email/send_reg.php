@@ -36,7 +36,7 @@ $smtpemailfrom = $smtpusermail;
 $user = $_GET["user"];
 $pwd = $_GET["pwd"];
 $emailsubject = "注册成功！";
-$emailbody = "<p>你的账号是：".$user."</p><p>你的密码是：".$pwd."</p><p>发送时间：".date("Y-m-d h:i:s")."</p><p>活码管理系统</p>";
+$emailbody = "<p>你的账号是：".$user."</p><p>你的密码是：".$pwd."</p><p>发送时间：".date("Y-m-d h:i:s")."</p><p>二维码管理系统</p>";
 // 发送邮件
 $smtp->sendmail($smtpemailto, $smtpemailfrom, $emailsubject, $emailbody, $emailtype);
 ?>

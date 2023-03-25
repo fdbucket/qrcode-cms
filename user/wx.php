@@ -19,13 +19,13 @@
       $favicon = $row_set['favicon'];
     }
     if ($title == null || empty($title) || $title == '') {
-        $title = "活码管理系统";
+        $title = "二维码管理系统";
         $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
         $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
         $favicon = "../assets/images/favicon.png";
     }
   }else{
-    $title = "活码管理系统";
+    $title = "二维码管理系统";
     $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
     $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
     $favicon = "../assets/images/favicon.png";
@@ -37,10 +37,10 @@
   <title>客服活码 - <?php echo $title; ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
   <meta name="keywords" content="<?php echo $keywords; ?>">
@@ -62,8 +62,10 @@ if(isset($_SESSION["session_user"])){
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
-  <span class="topbar-title">'.$title.'</span>
-  <span class="topbar-login-link"><a href="../account/exit">'.$_SESSION["session_user"].' 退出</a></span>
+  <div class="container">
+    <span class="topbar-title">'.$title.'</span>
+    <span class="topbar-login-link">'.$_SESSION["session_user"].'<a href="logout.php">退出</a></span>
+  </div>
 </div>
 
 <!-- 操作区 -->
@@ -166,7 +168,7 @@ if(isset($_SESSION["session_user"])){
               <div class="btn-group dropleft">
               <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="badge badge-secondary" style="cursor:pointer;">•••</span></span>
               <div class="dropdown-menu">
-              <a class="dropdown-item" href="./edi_wx.php?wxid='.$wx_id.'&home=ediwx&lang=zh_CN&token='.md5(uniqid()).'">编辑</a>
+              <a class="dropdown-item" href="./edi_wx.php?wxid='.$wx_id.'&home=ediwx">编辑</a>
               <a class="dropdown-item" href="javascript:;" data-toggle="modal" data-target="#share_wx" id="'.$wx_id.'" onclick="sharewx(this);">分享</a>
               <a class="dropdown-item" href="javascript:;" id="'.$wx_id.'" onclick="delwx(this);" title="点击后马上就删除的哦！">删除</a>
               </div>
@@ -204,7 +206,7 @@ if(isset($_SESSION["session_user"])){
 
   echo '<!-- 分享模态框 -->
   <div class="modal fade" id="share_wx">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content">
    
         <!-- 模态框头部 -->
@@ -223,14 +225,13 @@ if(isset($_SESSION["session_user"])){
         <div class="modal-footer">
           <button type="button" class="btn btn-tjzdy" data-dismiss="modal">关闭</button>
         </div>
-   
       </div>
     </div>
   </div>
   
   <!-- 创建微信客服活码 -->
   <div class="modal fade" id="addwx_modal">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content">
    
         <!-- 模态框头部 -->
@@ -295,7 +296,7 @@ if(isset($_SESSION["session_user"])){
 </div>';
 }else{
   // 跳转到登陆界面
-  header("Location:../account/login");
+  header("Location:./login.php");
 }
 ?>
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>登陆 - 活码管理系统</title>
+  <title>登陆 - 二维码管理系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <script src="../assets/js/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../assets/css/loginreg.css">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
 </head>
@@ -13,7 +13,7 @@
 
 <!-- 操作区 -->
 <div class="container">
-  <h2>活码管理系统</h2>
+  <h2>二维码管理系统</h2>
   <!-- 登录面板 -->
   <div class="pannel">
     <div class="left">

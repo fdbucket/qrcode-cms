@@ -8,7 +8,7 @@ include("./includes/common.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $site_title;?></title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
     <meta name="keywords" content="<?php echo $site_keywords;?>">
     <meta name="description" content="<?php echo $site_description;?>">
@@ -21,22 +21,18 @@ include("./includes/common.php");
         <a class="navbar-brand" href=".">
             <img src="./assets/images/logo.png" alt="logo" style="width:100px;">
         </a>
-
         <!-- Links -->
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="link" href=".">活码价格</a>
-            </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="link" href=".">开发文档</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="link" target="_blank" href="https://croidc.com/">程江云</a>
             </li>
         </ul>
 
         <!-- button -->
-        <a href="./user/" class="cj">获取注册码</a>
+        <!-- <a href="./user/" class="cj">获取注册码</a> -->
         <a href="./user/" class="btn btn-primary" style="position: absolute;right: 100px;">立即使用</a>
     </nav>
 
@@ -46,7 +42,7 @@ include("./includes/common.php");
                 <div class="bigtitle">微信私域流量运营数据增长神器</div>
                 <div class="miaoshu">全面升级，多渠道引流获客，精细化高效社群数据增长，让管理和营销更简单！让获取数据更简单！</div>
                 <div class="download">
-                    <a href="./user/">
+                    <a href="./user/" style="float: left;">
                         <div class="dlbtn">
                             <div class="dltext">
                                 <div class="text">立即使用</div>
@@ -204,14 +200,15 @@ include("./includes/common.php");
     </div>
 
     <div class="footer text-center">
-        <p>Copyright &copy;<?php echo date("Y") ?> <?php echo $site_name; ?> All Rights Reserved.</p>
-        <p>程江旗下：<a href="https://croidc.com/" target="_blank">程江云</a></p>
+        <p><?php echo $site_name; ?></p>
+        <p>Copyright &copy; <?php echo date("Y") ?> <a href="https://crogram.com/" target="_blank">程江科技</a> All Rights Reserved.</p>
+        <p><a href="https://croidc.com/" target="_blank">程江云</a></p>
         <p><a href="https://beian.miit.gov.cn" target="_blank"><?php echo $icp_number; ?></a></p>
     </div>
 
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>

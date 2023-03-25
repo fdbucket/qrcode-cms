@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>活码管理系统</title>
+  <title>二维码管理系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
 </head>
 <body>
@@ -30,14 +30,21 @@ if(isset($_SESSION["session_admin"])){
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
-  <span class="topbar-title">活码管理系统</span>
-  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
+  <div class="container">
+    <span class="topbar-title"><a href="./">二维码管理系统后台</a></span>
+    <span class="topbar-login-link">'.$_SESSION["session_admin"].'<a href="logout.php">退出</a></span>
+  </div>
 </div>
 
 <!-- 操作区 -->
 <div class="container">
   <br/>
-  <h3>活码管理后台 / 客服活码</h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="./">二维码管理系统</a></li>
+      <li class="breadcrumb-item active" aria-current="page">客服活码管理</li>
+    </ol>
+  </nav>
   <p>管理用户创建的活码数据（查看、停用、删除）</p>
   
   <!-- 左右布局 -->
@@ -171,7 +178,7 @@ if(isset($_SESSION["session_admin"])){
 
   echo '<!-- 分享模态框 -->
   <div class="modal fade" id="share_wx">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content">
    
         <!-- 模态框头部 -->

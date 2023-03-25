@@ -19,13 +19,13 @@
       $favicon = $row_set['favicon'];
     }
     if ($title == null || empty($title) || $title == '') {
-        $title = "活码管理系统";
+        $title = "二维码管理系统";
         $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
         $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
         $favicon = "../assets/images/favicon.png";
     }
   }else{
-    $title = "活码管理系统";
+    $title = "二维码管理系统";
     $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
     $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
     $favicon = "../assets/images/favicon.png";
@@ -35,13 +35,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>活码管理系统</title>
+  <title>二维码管理系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
   <meta name="keywords" content="<?php echo $keywords; ?>">
   <meta name="description" content="<?php echo $description; ?>">
@@ -88,14 +88,22 @@ if(isset($_SESSION["session_admin"])){
 
   echo '<!-- 顶部导航栏 -->
 <div id="topbar">
-  <span class="topbar-title"><a href="./">活码管理系统</a></span>
-  <span class="topbar-login-link"><a href="logout.php">'.$_SESSION["session_admin"].' 退出</a></span>
+  <div class="container">
+    <span class="topbar-title"><a href="./">二维码管理系统后台</a></span>
+    <span class="topbar-login-link">'.$_SESSION["session_admin"].'<a href="logout.php">退出</a></span>
+  </div>
 </div>
 
 <!-- 操作区 -->
 <div class="container">';
   echo '<br/>
-  <h3>活码管理系统</h3> 
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="./">二维码管理系统</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+    </ol>
+  </nav>
+
   <p>便捷管理用户创建的活码数据、用户账号、查看数据</p>
   
   <!-- 左右布局 -->
@@ -116,7 +124,7 @@ if(isset($_SESSION["session_admin"])){
   echo '<!-- 右侧布局 -->
   <div class="right-nav">
     <div class="jumbotron" style="padding:30px 20px 10px 20px;">
-      <h2>欢迎使用活码管理系统</h2> 
+      <h2>欢迎使用二维码管理系统</h2> 
       <p>这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。</p> 
     </div>
     <!-- 数据看板 -->

@@ -2,13 +2,13 @@
 <html>
 
 <head>
-  <title>活码管理系统安装程序 - v6.0</title>
+  <title>二维码管理系统安装程序 - v6.0</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../assets/css/huoma.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
   <style>
@@ -29,7 +29,7 @@
 <body>
   <!-- 顶部 -->
   <div id="topbar">
-    <span class="topbar-title">活码管理系统安装程序</span>
+    <span class="topbar-title">二维码管理系统安装程序</span>
   </div>
 
   <!-- 主体 -->
@@ -37,7 +37,7 @@
     <br />
     <br />
     <div class="jumbotron" style="background: #f2f2f2;">
-      <h2>活码管理系统安装程序</h2>
+      <h2>二维码管理系统安装程序</h2>
       <p>这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。<br /><br /><strong>遇到安装问题，可以加入交流群研讨：<a href="javascript:;" data-toggle="modal" data-target="#myModal">点击加群</a></strong></p>
 
       <!-- 表单 -->
@@ -74,14 +74,14 @@
           <div class="input-group-prepend">
             <span class="input-group-text">管理员账号</span>
           </div>
-          <input type="text" class="form-control" placeholder="管理员账号，用于登陆活码系统管理后台" id="user" name="user">
+          <input type="text" class="form-control" placeholder="管理员账号，用于登陆二维码管理系统后台" id="user" name="user">
         </div>
 
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">管理员密码</span>
           </div>
-          <input type="text" class="form-control" placeholder="管理员密码，用于登陆活码系统管理后台" id="pwd" name="pwd">
+          <input type="text" class="form-control" placeholder="管理员密码，用于登陆二维码管理系统后台" id="pwd" name="pwd">
         </div>
 
         <div class="input-group mb-3">
@@ -103,7 +103,7 @@
 
   <!-- 模态框 -->
   <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content">
         <!-- 模态框头部 -->
         <div class="modal-header">
@@ -142,7 +142,7 @@
         success: function(data) {
           // 安装成功
           if (data.code == 100) {
-            $(".container .jumbotron").html("<h3>活码管理系统安装成功！</h3><p><a href='../user/' target='blank'>用户后台>&nbsp;&nbsp;&nbsp;</a> <a href='../dashboard/' target='blank'>管理后台> </a></p>");
+            $(".container .jumbotron").html("<h3>二维码管理系统安装成功！</h3><p><a href='../user/' target='blank'>用户后台>&nbsp;&nbsp;&nbsp;</a> <a href='../dashboard/' target='blank'>管理后台> </a></p>");
 
           } else {
             $("#alert").css("display", "block");

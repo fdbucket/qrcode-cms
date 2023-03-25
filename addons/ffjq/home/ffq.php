@@ -8,7 +8,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=no">
-	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="../../../assets/js/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./ffq.css">
 </head>
 <?php
@@ -109,13 +109,16 @@
 
     $jsApiParameters = $wxPay->createJsBizPackage($openId,$payAmount,$outTradeNo,$orderName,$notifyUrl,$payTime,$attach);
     $jsApiParameters = json_encode($jsApiParameters);
+    
+    // 群头像
+    $avatarImg = rand(1,10).'.jpg';
 ?>
 
 <body>
 	<div id="quncontent">
 		<!-- 群头像 -->
 		<div id="qunlogo">
-			<img src="http://inews.gtimg.com/newsapp_bt/0/13865842860/641" />
+			<?php echo '<img src="./avatarImg/'.$avatarImg.'" />'; ?>
 		</div>
 
 		<!-- 群昵称 -->
@@ -128,7 +131,7 @@
 		<div id="jinqun_shuoming">
 			<ol>
 				<li>该群聊人数较多，为减少新消息给你带来的打扰，建议谨慎加入。</li>
-				<li>你需要实名验证后才能接受邀请，可绑定银行卡进行验证。</li>
+				<li>你需要实名认证后才能加入群聊，可前往「我 > 服务 > 钱包 > 身份信息」进行认证。</li>
 				<li>为维护微信平台绿色网络环境，请勿在群内传播违法违规内容。</li>
 			</ol>
 		</div>
