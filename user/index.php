@@ -21,13 +21,13 @@ if ($result_set->num_rows > 0) {
     if ($title == null || empty($title) || $title == '') {
         $title = "二维码管理系统";
         $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
-        $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
+        $description = "这是一套开源、免费、可上线运营的二维码管理系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
         $favicon = "../assets/images/favicon.png";
     }
 } else {
     $title = "二维码管理系统";
     $keywords = "活码,群活码,微信群活码系统,活码系统,群活码,不过期的微信群二维码,永久群二维码";
-    $description = "这是一套开源、免费、可上线运营的活码系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
+    $description = "这是一套开源、免费、可上线运营的二维码管理系统，便于协助自己、他人进行微信私域流量资源获取，更大化地进行营销推广活动！降低运营成本，提高工作效率，获取更多资源。";
     $favicon = "../assets/images/favicon.png";
 }
 ?>
@@ -81,6 +81,7 @@ if ($result_set->num_rows > 0) {
     <button type="button" class="btn btn-zdy">微信群活码</button>
     <button type="button" class="btn btn-zdylight" data-toggle="modal" data-target="#add_qun_hm">创建群活码</button>
     <a href="wx.php"><button type="button" class="btn btn-zdylight">客服活码</button></a>
+    <a href="img.php"><button type="button" class="btn btn-zdylight">图片</button></a>
     <a href="./active.php"><button type="button" class="btn btn-zdylight">活动码</button></a>';
         function Get_Addons_Dir($addons_path)
         {

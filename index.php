@@ -116,7 +116,7 @@ include("./includes/common.php");
         </div>
         <div class="right1">
             <div class="title">响应式操作面板</div>
-            <div class="desc">手机、电脑、平板均可操作，自适应设备，随时随地管理活码系统</div>
+            <div class="desc">手机、电脑、平板均可操作，自适应设备，随时随地管理二维码</div>
             <div class="dlbtn">
                 <a href="./user/">立即使用</a>
             </div>
